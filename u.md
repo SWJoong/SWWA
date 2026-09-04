@@ -13,3 +13,6 @@ T-03 완료(W 역할 겸임) · PR #3(feat/t-03-checklist-confirm) 오픈, 의�
 ## [2026-09-04T14:38Z] U
 T-03(PR#3)·T-04(PR#4) main 병합 완료 · M1(걷는 뼈대) 달성: 하네스·스캐폴드·검사항목 데이터·조회 도구 2종이 Inspector에서 동작 확인됨 · npm run check 전체 통과(데이터 계약 테스트 16건 포함) · 다음 T-06 정적 엔진(check_html·check_contrast·T1 규칙 18개) 착수 예정, 선행 골든 테스트(원래 W의 T-05)도 W 부재로 U가 최소 계약 테스트부터 작성 후 구현
 
+## [2026-09-04T17:09Z] U
+T-05(PR#6)·T-06(PR#5) main 병합 완료(PR#5의 base 실수로 main에 안 들어갔던 것을 PR#7로 수정 반영) · 정적 엔진 완성: check_html·check_contrast 동작, T1 규칙 18개, npm run check 92개 테스트 전부 통과 · 성능 버그 발견·수정(axe resultTypes에 passes 포함 시 문서 크기에 따라 수십 배 느려짐 실측, 제거함) · 알려진 한계: '500KB≤2초' 기준 미충족(axe-core+jsdom 자체 성능, 일반 컴포넌트 검사는 ~0.2초로 문제 없음) — docs/plan/03-backend-plan.md §5.1에 기록, 후속 과제(worker_threads 하드 타임아웃 등) 백로그 · 다음 T-07 브라우저 엔진 착수 예정
+
