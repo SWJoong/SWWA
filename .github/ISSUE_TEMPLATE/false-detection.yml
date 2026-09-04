@@ -1,0 +1,46 @@
+name: 오탐·미탐 신고
+description: 규칙이 잘못 잡았거나(오탐), 잡아야 하는데 놓쳤어요(미탐).
+title: "[오탐·미탐] "
+labels: ["오탐·미탐"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        검사 결과가 이상하면 알려 주세요.
+        주신 마크업은 (개인정보·내부 URL을 지운 뒤) 다시 틀리지 않게 하는 테스트로 넣습니다.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 어떤 문제인가요?
+      options:
+        - 오탐 (잘못 잡음)
+        - 미탐 (놓침)
+    validations:
+      required: true
+  - type: input
+    id: rule
+    attributes:
+      label: 규칙·검사항목 ID
+      description: 검사 결과에 나온 규칙 ID나 KWCAG 검사항목 번호예요(예 k-skip-link-first, 6.4.1).
+      placeholder: k-skip-link-first
+  - type: textarea
+    id: example
+    attributes:
+      label: 검사에 넣은 코드
+      description: HTML/코드 조각이나 URL을 그대로 붙여넣어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 바란 결과
+      description: 어떻게 나오길 바랐나요?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 결과
+      description: 실제로 어떻게 나왔나요?
+    validations:
+      required: true

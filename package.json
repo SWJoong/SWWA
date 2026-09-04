@@ -1,0 +1,76 @@
+{
+  "name": "swwa-mcp",
+  "version": "0.1.0",
+  "description": "KWCAG 2.2(한국형 웹 콘텐츠 접근성 지침)·웹 접근성 품질인증 기준으로 웹 콘텐츠의 접근성을 검사·리뷰·인증 준비하도록 돕는 MCP 서버. 오프라인 결정적 도구(정적 jsdom+axe-core, 선택적 브라우저 감사)를 제공한다.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "accessibility",
+    "kwcag",
+    "wcag",
+    "korean",
+    "a11y"
+  ],
+  "license": "MIT",
+  "author": "SWJoong contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SWJoong/SWWA.git"
+  },
+  "homepage": "https://github.com/SWJoong/SWWA#readme",
+  "bugs": {
+    "url": "https://github.com/SWJoong/SWWA/issues"
+  },
+  "type": "module",
+  "bin": {
+    "swwa-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run --exclude tests/browser",
+    "test:watch": "vitest",
+    "test:browser": "vitest run tests/browser",
+    "inspector": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "check": "npm run lint && npm run typecheck && npm run build && npm test && node scripts/validate-assets.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3",
+    "axe-core": "~4.13.0",
+    "@axe-core/playwright": "~4.13.0",
+    "jsdom": "^30.0.0",
+    "playwright-core": "^1.62.0",
+    "parse5": "^8.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.20.1",
+    "eslint": "^10.8.1",
+    "playwright": "^1.62.0",
+    "tsx": "^4.23.11",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.66.0",
+    "vitest": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

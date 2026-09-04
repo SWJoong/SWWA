@@ -61,9 +61,11 @@ claude --plugin-dir . # 플러그인 로컬 테스트
 
 ### 완료
 - **T-00 저장소 부트스트랩** (2026-09-04, W) — `docs/plan/00~07`, 단일 소스 `kwcag22-checklist.md`, U측 인계서 `docs/HANDOFF-U.md`, CLAUDE.md, LICENSE, .gitignore, README
+- **T-01 하네스 세팅** (2026-09-04, U) — `scripts/agent-sync.sh`·`agent-sync` 채널 브랜치·`.claude/settings.json` SessionStart 훅·`docs/CLAUDE-INSTANCE-{U,W}.md`. PR #1(`feat/t-01-harness`), 병합 대기
+- **T-02 스캐폴드** (2026-09-04, U) — `package.json`(swwa-mcp)·tsconfig·eslint·vitest·`src/{index,server,messages,schema-dialect}.ts`·`bin/swwa-mcp.mjs`·`.claude-plugin/{plugin,marketplace}.json`·`.mcp.json`·`skills/{a11y-review,a11y-audit}/SKILL.md` 골격·`.github/workflows/{ci,cross-platform}.yml`·이슈·PR 템플릿·`SECURITY.md`. `npm run check` 통과, Inspector `initialize` 확인, `claude plugin validate .` 통과. PR(`feat/t-02-scaffold`), 병합 대기
 
 ### 활성
-- **T-01 하네스 세팅** (U) — `docs/plan/06-harness-engineering.md` §3 절차. agent-sync 채널·SessionStart 훅·`docs/CLAUDE-INSTANCE-{U,W}.md`
+- **T-04 데이터 자산·조회 도구 대기** (U) — T-03(W)의 `kwcag22-checklist.md` 확정·데이터 계약 테스트를 pull해 초록으로 만드는 것이 착수 조건
 
 ### 다음
-- **T-02 스캐폴드** (U) → **T-03 단일 소스 확정·데이터 계약 테스트** (W, T-01·T-02와 병행 가능) → T-04 데이터·조회 도구 (U) · 전체 WBS: `docs/plan/06-harness-engineering.md` §5
+- **T-03 단일 소스 확정·데이터 계약 테스트** (W, T-01·T-02와 병행 가능) → T-04 데이터·조회 도구 (U) · 전체 WBS: `docs/plan/06-harness-engineering.md` §5

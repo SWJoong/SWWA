@@ -1,0 +1,16 @@
+{
+  "name": "swwa",
+  "version": "0.1.0",
+  "description": "KWCAG 2.2(한국형 웹 콘텐츠 접근성 지침)·웹 접근성 품질인증 기준으로 웹 접근성을 검사·리뷰·인증 준비하도록 돕는 스킬 + MCP 서버.",
+  "author": {
+    "name": "SWJoong contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "accessibility",
+    "kwcag",
+    "wcag",
+    "korean",
+    "a11y"
+  ]
+}
