@@ -1,0 +1,196 @@
+{
+  "image-alt": {
+    "kwcag": "5.1.1"
+  },
+  "input-image-alt": {
+    "kwcag": "5.1.1"
+  },
+  "area-alt": {
+    "kwcag": "5.1.1"
+  },
+  "object-alt": {
+    "kwcag": "5.1.1"
+  },
+  "svg-img-alt": {
+    "kwcag": "5.1.1"
+  },
+  "role-img-alt": {
+    "kwcag": "5.1.1"
+  },
+  "video-caption": {
+    "kwcag": "5.2.1"
+  },
+  "td-headers-attr": {
+    "kwcag": "5.3.1"
+  },
+  "th-has-data-cells": {
+    "kwcag": "5.3.1"
+  },
+  "scope-attr-valid": {
+    "kwcag": "5.3.1"
+  },
+  "table-fake-caption": {
+    "kwcag": "5.3.1"
+  },
+  "table-duplicate-name": {
+    "kwcag": "5.3.1"
+  },
+  "heading-order": {
+    "kwcag": "5.3.2"
+  },
+  "link-in-text-block": {
+    "kwcag": "5.4.1",
+    "staticDisabled": true
+  },
+  "no-autoplay-audio": {
+    "kwcag": "5.4.2",
+    "staticDisabled": true
+  },
+  "color-contrast": {
+    "kwcag": "5.4.3",
+    "staticDisabled": true
+  },
+  "scrollable-region-focusable": {
+    "kwcag": "6.1.1",
+    "staticDisabled": true
+  },
+  "nested-interactive": {
+    "kwcag": "6.1.1"
+  },
+  "server-side-image-map": {
+    "kwcag": "6.1.1"
+  },
+  "target-size": {
+    "kwcag": "6.1.3",
+    "staticDisabled": true
+  },
+  "meta-refresh": {
+    "kwcag": "6.2.1"
+  },
+  "blink": {
+    "kwcag": "6.2.2"
+  },
+  "marquee": {
+    "kwcag": "6.2.2"
+  },
+  "bypass": {
+    "kwcag": "6.4.1"
+  },
+  "skip-link": {
+    "kwcag": "6.4.1"
+  },
+  "document-title": {
+    "kwcag": "6.4.2"
+  },
+  "frame-title": {
+    "kwcag": "6.4.2"
+  },
+  "frame-title-unique": {
+    "kwcag": "6.4.2"
+  },
+  "page-has-heading-one": {
+    "kwcag": "6.4.2"
+  },
+  "empty-heading": {
+    "kwcag": "6.4.2"
+  },
+  "link-name": {
+    "kwcag": "6.4.3"
+  },
+  "label-content-name-mismatch": {
+    "kwcag": "6.5.3"
+  },
+  "html-has-lang": {
+    "kwcag": "7.1.1"
+  },
+  "html-lang-valid": {
+    "kwcag": "7.1.1"
+  },
+  "html-xml-lang-mismatch": {
+    "kwcag": "7.1.1"
+  },
+  "valid-lang": {
+    "kwcag": "7.1.1"
+  },
+  "label": {
+    "kwcag": "7.3.2"
+  },
+  "label-title-only": {
+    "kwcag": "7.3.2"
+  },
+  "select-name": {
+    "kwcag": "7.3.2"
+  },
+  "form-field-multiple-labels": {
+    "kwcag": "7.3.2"
+  },
+  "autocomplete-valid": {
+    "kwcag": "7.3.4"
+  },
+  "duplicate-id-active": {
+    "kwcag": "8.1.1"
+  },
+  "duplicate-id-aria": {
+    "kwcag": "8.1.1"
+  },
+  "aria-allowed-attr": {
+    "kwcag": "8.2.1"
+  },
+  "aria-required-attr": {
+    "kwcag": "8.2.1"
+  },
+  "aria-roles": {
+    "kwcag": "8.2.1"
+  },
+  "aria-valid-attr": {
+    "kwcag": "8.2.1"
+  },
+  "aria-valid-attr-value": {
+    "kwcag": "8.2.1"
+  },
+  "aria-hidden-focus": {
+    "kwcag": "8.2.1"
+  },
+  "aria-hidden-body": {
+    "kwcag": "8.2.1"
+  },
+  "button-name": {
+    "kwcag": "8.2.1"
+  },
+  "aria-command-name": {
+    "kwcag": "8.2.1"
+  },
+  "aria-input-field-name": {
+    "kwcag": "8.2.1"
+  },
+  "aria-toggle-field-name": {
+    "kwcag": "8.2.1"
+  },
+  "aria-dialog-name": {
+    "kwcag": "8.2.1"
+  },
+  "aria-progressbar-name": {
+    "kwcag": "8.2.1"
+  },
+  "aria-tooltip-name": {
+    "kwcag": "8.2.1"
+  },
+  "aria-treeitem-name": {
+    "kwcag": "8.2.1"
+  },
+  "presentation-role-conflict": {
+    "kwcag": "8.2.1"
+  },
+  "color-contrast-enhanced": {
+    "kwcag": "5.4.3",
+    "staticDisabled": true
+  },
+  "frame-tested": {
+    "kwcag": null,
+    "staticDisabled": true
+  },
+  "css-orientation-lock": {
+    "kwcag": null,
+    "staticDisabled": true
+  }
+}

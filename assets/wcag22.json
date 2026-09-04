@@ -1,0 +1,780 @@
+{
+  "criteria": [
+    {
+      "sc": "1.1.1",
+      "name_en": "Non-text Content",
+      "name_ko": "텍스트 아닌 콘텐츠",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.1.1"
+      ]
+    },
+    {
+      "sc": "1.2.1",
+      "name_en": "Audio-only and Video-only (Prerecorded)",
+      "name_ko": "음성 전용·비디오 전용(사전 녹화)",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.2.1"
+      ]
+    },
+    {
+      "sc": "1.2.2",
+      "name_en": "Captions (Prerecorded)",
+      "name_ko": "자막(사전 녹화)",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.2.1"
+      ]
+    },
+    {
+      "sc": "1.2.3",
+      "name_en": "Audio Description or Media Alternative (Prerecorded)",
+      "name_ko": "화면 해설 또는 미디어 대체 수단(사전 녹화)",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.2.1"
+      ]
+    },
+    {
+      "sc": "1.2.4",
+      "name_en": "Captions (Live)",
+      "name_ko": "자막(실시간)",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.2.5",
+      "name_en": "Audio Description (Prerecorded)",
+      "name_ko": "화면 해설(사전 녹화)",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.3.1",
+      "name_en": "Info and Relationships",
+      "name_ko": "정보와 관계",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.3.1"
+      ]
+    },
+    {
+      "sc": "1.3.2",
+      "name_en": "Meaningful Sequence",
+      "name_ko": "의미 있는 순서",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.3.2"
+      ]
+    },
+    {
+      "sc": "1.3.3",
+      "name_en": "Sensory Characteristics",
+      "name_ko": "감각적 특성",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.3.3"
+      ]
+    },
+    {
+      "sc": "1.3.4",
+      "name_en": "Orientation",
+      "name_ko": "방향",
+      "level": "AA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.3.5",
+      "name_en": "Identify Input Purpose",
+      "name_ko": "입력 목적 식별",
+      "level": "AA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.1",
+      "name_en": "Use of Color",
+      "name_ko": "색의 사용",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.4.1"
+      ]
+    },
+    {
+      "sc": "1.4.2",
+      "name_en": "Audio Control",
+      "name_ko": "오디오 제어",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.4.2"
+      ]
+    },
+    {
+      "sc": "1.4.3",
+      "name_en": "Contrast (Minimum)",
+      "name_ko": "명도 대비(최소)",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": [
+        "5.4.3"
+      ]
+    },
+    {
+      "sc": "1.4.4",
+      "name_en": "Resize Text",
+      "name_ko": "텍스트 크기 조절",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.5",
+      "name_en": "Images of Text",
+      "name_ko": "텍스트 이미지",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.10",
+      "name_en": "Reflow",
+      "name_ko": "리플로우",
+      "level": "AA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.11",
+      "name_en": "Non-text Contrast",
+      "name_ko": "텍스트 아닌 요소의 대비",
+      "level": "AA",
+      "since": "2.1",
+      "kwcagIds": [
+        "5.4.4"
+      ]
+    },
+    {
+      "sc": "1.4.12",
+      "name_en": "Text Spacing",
+      "name_ko": "텍스트 간격",
+      "level": "AA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.13",
+      "name_en": "Content on Hover or Focus",
+      "name_ko": "호버 또는 포커스로 나타나는 콘텐츠",
+      "level": "AA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.1.1",
+      "name_en": "Keyboard",
+      "name_ko": "키보드",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.1.1"
+      ]
+    },
+    {
+      "sc": "2.1.2",
+      "name_en": "No Keyboard Trap",
+      "name_ko": "키보드 함정 없음",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.1.1"
+      ]
+    },
+    {
+      "sc": "2.1.4",
+      "name_en": "Character Key Shortcuts",
+      "name_ko": "문자 단축키",
+      "level": "A",
+      "since": "2.1",
+      "kwcagIds": [
+        "6.1.4"
+      ]
+    },
+    {
+      "sc": "2.2.1",
+      "name_en": "Timing Adjustable",
+      "name_ko": "시간 제한 조절",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.2.1"
+      ]
+    },
+    {
+      "sc": "2.2.2",
+      "name_en": "Pause, Stop, Hide",
+      "name_ko": "정지, 중지, 숨기기",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.2.2"
+      ]
+    },
+    {
+      "sc": "2.3.1",
+      "name_en": "Three Flashes or Below Threshold",
+      "name_ko": "3회 섬광 또는 역치 이하",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.3.1"
+      ]
+    },
+    {
+      "sc": "2.4.1",
+      "name_en": "Bypass Blocks",
+      "name_ko": "블록 건너뛰기",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.4.1"
+      ]
+    },
+    {
+      "sc": "2.4.2",
+      "name_en": "Page Titled",
+      "name_ko": "페이지 제목",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.4.2"
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "name_en": "Focus Order",
+      "name_ko": "초점 순서",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.1.2"
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "name_en": "Link Purpose (In Context)",
+      "name_ko": "링크 목적(맥락 안에서)",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.4.3"
+      ]
+    },
+    {
+      "sc": "2.4.5",
+      "name_en": "Multiple Ways",
+      "name_ko": "여러 방법",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.4.6",
+      "name_en": "Headings and Labels",
+      "name_ko": "제목과 레이블",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.4.2"
+      ]
+    },
+    {
+      "sc": "2.4.7",
+      "name_en": "Focus Visible",
+      "name_ko": "초점 표시",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": [
+        "6.1.2"
+      ]
+    },
+    {
+      "sc": "2.4.11",
+      "name_en": "Focus Not Obscured (Minimum)",
+      "name_ko": "초점 가림 없음(최소)",
+      "level": "AA",
+      "since": "2.2",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.5.1",
+      "name_en": "Pointer Gestures",
+      "name_ko": "포인터 제스처",
+      "level": "A",
+      "since": "2.1",
+      "kwcagIds": [
+        "6.5.1"
+      ]
+    },
+    {
+      "sc": "2.5.2",
+      "name_en": "Pointer Cancellation",
+      "name_ko": "포인터 취소",
+      "level": "A",
+      "since": "2.1",
+      "kwcagIds": [
+        "6.5.2"
+      ]
+    },
+    {
+      "sc": "2.5.3",
+      "name_en": "Label in Name",
+      "name_ko": "이름 안의 레이블",
+      "level": "A",
+      "since": "2.1",
+      "kwcagIds": [
+        "6.5.3"
+      ]
+    },
+    {
+      "sc": "2.5.4",
+      "name_en": "Motion Actuation",
+      "name_ko": "동작 기반 작동",
+      "level": "A",
+      "since": "2.1",
+      "kwcagIds": [
+        "6.5.4"
+      ]
+    },
+    {
+      "sc": "2.5.7",
+      "name_en": "Dragging Movements",
+      "name_ko": "끌기 동작",
+      "level": "AA",
+      "since": "2.2",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.5.8",
+      "name_en": "Target Size (Minimum)",
+      "name_ko": "타깃 크기(최소)",
+      "level": "AA",
+      "since": "2.2",
+      "kwcagIds": [
+        "6.1.3"
+      ]
+    },
+    {
+      "sc": "3.1.1",
+      "name_en": "Language of Page",
+      "name_ko": "페이지 언어",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "7.1.1"
+      ]
+    },
+    {
+      "sc": "3.1.2",
+      "name_en": "Language of Parts",
+      "name_ko": "부분의 언어",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.2.1",
+      "name_en": "On Focus",
+      "name_ko": "초점을 받을 때",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "7.2.1"
+      ]
+    },
+    {
+      "sc": "3.2.2",
+      "name_en": "On Input",
+      "name_ko": "입력할 때",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "7.2.1"
+      ]
+    },
+    {
+      "sc": "3.2.3",
+      "name_en": "Consistent Navigation",
+      "name_ko": "일관된 내비게이션",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.2.4",
+      "name_en": "Consistent Identification",
+      "name_ko": "일관된 식별",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.2.6",
+      "name_en": "Consistent Help",
+      "name_ko": "일관된 도움말",
+      "level": "A",
+      "since": "2.2",
+      "kwcagIds": [
+        "7.2.2"
+      ]
+    },
+    {
+      "sc": "3.3.1",
+      "name_en": "Error Identification",
+      "name_ko": "오류 식별",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "7.3.1"
+      ]
+    },
+    {
+      "sc": "3.3.2",
+      "name_en": "Labels or Instructions",
+      "name_ko": "레이블 또는 지시사항",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "7.3.2"
+      ]
+    },
+    {
+      "sc": "3.3.3",
+      "name_en": "Error Suggestion",
+      "name_ko": "오류 제안",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": [
+        "7.3.1"
+      ]
+    },
+    {
+      "sc": "3.3.4",
+      "name_en": "Error Prevention (Legal, Financial, Data)",
+      "name_ko": "오류 방지(법적·금융·데이터)",
+      "level": "AA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.3.7",
+      "name_en": "Redundant Entry",
+      "name_ko": "중복 입력",
+      "level": "A",
+      "since": "2.2",
+      "kwcagIds": [
+        "7.3.4"
+      ]
+    },
+    {
+      "sc": "3.3.8",
+      "name_en": "Accessible Authentication (Minimum)",
+      "name_ko": "접근 가능한 인증(최소)",
+      "level": "AA",
+      "since": "2.2",
+      "kwcagIds": [
+        "7.3.3"
+      ]
+    },
+    {
+      "sc": "4.1.2",
+      "name_en": "Name, Role, Value",
+      "name_ko": "이름, 역할, 값",
+      "level": "A",
+      "since": "2.0",
+      "kwcagIds": [
+        "8.2.1"
+      ]
+    },
+    {
+      "sc": "4.1.3",
+      "name_en": "Status Messages",
+      "name_ko": "상태 메시지",
+      "level": "AA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.2.6",
+      "name_en": "Sign Language (Prerecorded)",
+      "name_ko": "수어(사전 녹화)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.2.7",
+      "name_en": "Extended Audio Description (Prerecorded)",
+      "name_ko": "확장 화면 해설(사전 녹화)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.2.8",
+      "name_en": "Media Alternative (Prerecorded)",
+      "name_ko": "미디어 대체 수단(사전 녹화)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.2.9",
+      "name_en": "Audio-only (Live)",
+      "name_ko": "음성 전용(실시간)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.3.6",
+      "name_en": "Identify Purpose",
+      "name_ko": "목적 식별",
+      "level": "AAA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.6",
+      "name_en": "Contrast (Enhanced)",
+      "name_ko": "명도 대비(강화)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.7",
+      "name_en": "Low or No Background Audio",
+      "name_ko": "배경음 최소화",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.8",
+      "name_en": "Visual Presentation",
+      "name_ko": "시각적 표현",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "1.4.9",
+      "name_en": "Images of Text (No Exception)",
+      "name_ko": "텍스트 이미지(예외 없음)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.1.3",
+      "name_en": "Keyboard (No Exception)",
+      "name_ko": "키보드(예외 없음)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.2.3",
+      "name_en": "No Timing",
+      "name_ko": "시간제한 없음",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.2.4",
+      "name_en": "Interruptions",
+      "name_ko": "중단",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.2.5",
+      "name_en": "Re-authenticating",
+      "name_ko": "재인증",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.2.6",
+      "name_en": "Timeouts",
+      "name_ko": "시간 초과",
+      "level": "AAA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.3.2",
+      "name_en": "Three Flashes",
+      "name_ko": "3회 섬광",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.3.3",
+      "name_en": "Animation from Interactions",
+      "name_ko": "상호작용에 의한 애니메이션",
+      "level": "AAA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.4.8",
+      "name_en": "Location",
+      "name_ko": "위치",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.4.9",
+      "name_en": "Link Purpose (Link Only)",
+      "name_ko": "링크 목적(링크만으로)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.4.10",
+      "name_en": "Section Headings",
+      "name_ko": "구획 제목",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.4.12",
+      "name_en": "Focus Not Obscured (Enhanced)",
+      "name_ko": "초점 가림 없음(강화)",
+      "level": "AAA",
+      "since": "2.2",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.4.13",
+      "name_en": "Focus Appearance",
+      "name_ko": "초점 외관",
+      "level": "AAA",
+      "since": "2.2",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.5.5",
+      "name_en": "Target Size (Enhanced)",
+      "name_ko": "타깃 크기(강화)",
+      "level": "AAA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "2.5.6",
+      "name_en": "Concurrent Input Mechanisms",
+      "name_ko": "동시 입력 방식",
+      "level": "AAA",
+      "since": "2.1",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.1.3",
+      "name_en": "Unusual Words",
+      "name_ko": "이례적인 단어",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.1.4",
+      "name_en": "Abbreviations",
+      "name_ko": "약어",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.1.5",
+      "name_en": "Reading Level",
+      "name_ko": "독해 수준",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.1.6",
+      "name_en": "Pronunciation",
+      "name_ko": "발음",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.2.5",
+      "name_en": "Change on Request",
+      "name_ko": "요청에 의한 변경",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.3.5",
+      "name_en": "Help",
+      "name_ko": "도움말",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.3.6",
+      "name_en": "Error Prevention (All)",
+      "name_ko": "오류 방지(전체)",
+      "level": "AAA",
+      "since": "2.0",
+      "kwcagIds": []
+    },
+    {
+      "sc": "3.3.9",
+      "name_en": "Accessible Authentication (Enhanced)",
+      "name_ko": "접근 가능한 인증(강화)",
+      "level": "AAA",
+      "since": "2.2",
+      "kwcagIds": []
+    },
+    {
+      "sc": "4.1.1",
+      "name_en": "Parsing",
+      "name_ko": "구문 분석",
+      "level": "A",
+      "since": "2.0",
+      "removedIn": "2.2",
+      "needsVerification": true,
+      "kwcagIds": [
+        "8.1.1"
+      ]
+    }
+  ]
+}

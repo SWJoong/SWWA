@@ -3,6 +3,9 @@ node_modules/
 dist/
 *.tsbuildinfo
 
+# build 시 skills/kwcag-guide/references/kwcag22-checklist.md에서 복사됨(scripts/copy-checklist.mjs)
+assets/kwcag22-checklist.md
+
 # audit outputs (스크린샷·리포트는 요청 시에만 생성)
 outputs/
 test-results/
