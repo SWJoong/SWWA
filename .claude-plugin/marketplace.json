@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "swwa",
+  "description": "SWJoong/SWWA — KWCAG 2.2 웹 접근성 검사·리뷰·인증 준비 플러그인",
+  "owner": {
+    "name": "SWJoong contributors"
+  },
+  "plugins": [
+    {
+      "name": "swwa",
+      "source": "./"
+    }
+  ]
+}
