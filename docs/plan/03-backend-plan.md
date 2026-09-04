@@ -82,6 +82,37 @@ const kFindings = runStaticRules(rules.k, { document, window, html, baseUrl, dat
 - 크기 상한 2MB, 규칙별 try/catch, 전체 타임아웃 10초(초과 시 `E_TIMEOUT`).
 - `STATIC_DISABLED_RULES`는 [02](02-architecture.md) §3.1 목록을 `axe-rule-map.json`의 `staticDisabled`와 동기.
 
+### 5.1 알려진 한계 — 대용량 문서 성능 (T-06, 2026-09-05)
+
+`axe.run()`의 `resultTypes`에 `"passes"`를 포함하면 axe-core가 모든 통과 사례까지 리포트하느라
+문서 크기에 따라 수십 배 느려진다는 것을 확인했다(500행 표 기준 <1초 → 50초 이상). **이 프로젝트는
+`resultTypes: ["violations", "incomplete"]`만 요청**하도록 고쳐 이 문제는 해결했다(checkpoint 상태
+계산은 단일 소스의 `axeRules` 목록으로 "실행 가능 여부"를 판단하므로 axe의 실제 `passes` 결과가
+애초에 필요 없다).
+
+다만 그 이후에도 **axe-core를 jsdom 위에서 실행하는 것 자체가 실제 브라우저보다 훨씬 느리다**
+(접근 가능한 이름 계산·`getComputedStyle` 등이 jsdom에서 비용이 크다). 실측:
+
+| 문서 형태 | 크기 | 소요 시간 |
+|---|---|---|
+| 일반 컴포넌트/페이지(FR-01 주 사용 사례) | 수 KB | ~0.2초 |
+| 카드 목록형 페이지(article×h2×p×img×a) | 50KB | ~3초 |
+| 〃 | 100KB | ~18초 |
+| 〃 | 200KB+ | 25초 이상(타임아웃) |
+
+**완료 기준 "500KB ≤ 2초"는 현재 구현으로 충족하지 못한다.** 또한 axe-core의 규칙 평가가 충분히 긴
+구간 동안 동기적으로 실행되는 경우가 있어, `engine/static.ts`의 10초 타임아웃(`Promise.race`)이
+그 구간 동안은 선점하지 못할 수 있다 — 극단적으로 큰/조밀한 입력에서는 서버가 응답 없이 오래
+멈출 위험이 남아 있다.
+
+**후속 조치가 필요하다(백로그)**:
+1. `worker_threads`로 정적 엔진을 분리해 실제로 강제 종료 가능한 타임아웃 구현
+2. 페이지 규모에 따라 axe 규칙 서브셋을 더 줄이거나 단계적으로 실행하는 방안 검토
+3. 완료 기준 자체("500KB ≤ 2초")를 실측 근거로 재조정할지 검토(일반 사용 사례는 이미 충분히 빠름)
+
+일반적인 사용(컴포넌트·페이지 단위 검사, 수백 KB 미만)은 문제 없이 빠르다 — 이 한계는 대용량 페이지
+전체를 한 번에 검사하는 시나리오(예: `audit_site` 백로그, 대형 목록 페이지)에서만 나타난다.
+
 ## 6. 브라우저 엔진 (`engine/browser.ts`, `browser-detect.ts`)
 
 - 채널 탐지(프로세스 캐시): `chromium.launch({ channel: "chrome", headless: true })` → 실패 시 `"msedge"` → 실패 시 `chromium.launch()`(사용자가 `playwright` 브라우저를 설치한 경우) → 모두 실패 시 `E_NO_BROWSER` + `installHint`("Chrome/Edge를 설치하거나 `npx playwright install chromium`").
