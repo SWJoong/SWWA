@@ -1,0 +1,1688 @@
+{
+  "version": "2.2",
+  "dataVersion": "0.1.0",
+  "updatedAt": "2026-09-04",
+  "sourceIds": [
+    "kwcag22-a11ykr",
+    "kwcag22-websoul",
+    "rra-kcs"
+  ],
+  "checkpoints": [
+    {
+      "id": "5.1.1",
+      "alias": "1.1.1",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.1",
+        "alias": "1.1",
+        "name": "대체 텍스트"
+      },
+      "name_ko": "적절한 대체 텍스트 제공",
+      "name_en": null,
+      "requirement_ko": "텍스트 아닌 콘텐츠는 그 의미나 용도를 이해할 수 있도록 대체 텍스트를 제공해야 한다.",
+      "summary_ko": "이미지·아이콘 등 텍스트가 아닌 콘텐츠에 그 의미를 전달하는 대체 텍스트를 제공한다.",
+      "wcag": [
+        {
+          "sc": "1.1.1",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "image-alt",
+        "input-image-alt",
+        "area-alt",
+        "object-alt",
+        "svg-img-alt",
+        "role-img-alt"
+      ],
+      "kRules": [
+        "k-alt-meaningless"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "이미지의 alt 속성 유무와 내용을 확인한다.",
+        "장식용 이미지는 alt=\"\"로 처리했는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "alt 속성 누락",
+        "파일명을 그대로 alt로 사용(img1.png)",
+        "\"이미지\"·\"사진\" 같은 무의미한 alt"
+      ],
+      "passExamples_ko": [
+        "alt=\"로그인\" 버튼 아이콘",
+        "장식용 배경 이미지에 alt=\"\""
+      ],
+      "components": [
+        "image"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.2.1",
+      "alias": "1.2.1",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.2",
+        "alias": "1.2",
+        "name": "멀티미디어 대체수단"
+      },
+      "name_ko": "자막 제공",
+      "name_en": null,
+      "requirement_ko": "멀티미디어 콘텐츠에는 자막, 원고 또는 수어를 제공해야 한다.",
+      "summary_ko": "오디오·비디오 콘텐츠에 자막·대본·수어 등 대체 수단을 제공한다.",
+      "wcag": [
+        {
+          "sc": "1.2.1",
+          "level": "A"
+        },
+        {
+          "sc": "1.2.2",
+          "level": "A"
+        },
+        {
+          "sc": "1.2.3",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "video-caption"
+      ],
+      "kRules": [
+        "k-media-track"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "video/audio 요소에 자막 트랙(track[kind=captions])이 있는지 확인한다.",
+        "자막 내용이 음성과 일치하는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "자막 트랙 누락",
+        "자동 생성 자막의 오탈자 방치"
+      ],
+      "passExamples_ko": [
+        "강의 영상에 한국어 자막 트랙 제공"
+      ],
+      "components": [
+        "media"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.3.1",
+      "alias": "1.3.1",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.3",
+        "alias": "1.3",
+        "name": "적응성"
+      },
+      "name_ko": "표의 구성",
+      "name_en": null,
+      "requirement_ko": "표는 이해하기 쉽게 구성해야 한다.",
+      "summary_ko": "표는 caption과 th/td 관계로 이해하기 쉽게 구성한다.",
+      "wcag": [
+        {
+          "sc": "1.3.1",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "td-headers-attr",
+        "th-has-data-cells",
+        "scope-attr-valid",
+        "table-fake-caption",
+        "table-duplicate-name"
+      ],
+      "kRules": [
+        "k-table-caption",
+        "k-table-th-missing"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "데이터 표에 caption·th·scope/headers 속성이 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "레이아웃 목적으로 표를 사용",
+        "th 없이 td만 사용",
+        "caption 누락"
+      ],
+      "passExamples_ko": [
+        "표에 caption과 th scope=\"col\" 제공"
+      ],
+      "components": [
+        "table"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.3.2",
+      "alias": "1.3.2",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.3",
+        "alias": "1.3",
+        "name": "적응성"
+      },
+      "name_ko": "콘텐츠의 선형구조",
+      "name_en": null,
+      "requirement_ko": "콘텐츠는 논리적인 순서로 제공해야 한다.",
+      "summary_ko": "콘텐츠는 시각적 배치와 무관하게 논리적인 읽기 순서를 갖는다.",
+      "wcag": [
+        {
+          "sc": "1.3.2",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "heading-order"
+      ],
+      "kRules": [
+        "k-tabindex-positive"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "CSS를 제거하고 DOM 순서로 읽었을 때 의미가 통하는지 확인한다.",
+        "제목 레벨(h1~h6)이 순서대로 사용됐는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "tabindex 양수값으로 포커스 순서를 임의 조정",
+        "제목 레벨 건너뛰기(h2 다음 h4)"
+      ],
+      "passExamples_ko": [
+        "h1→h2→h3 순서대로 제목 사용"
+      ],
+      "components": [
+        "navigation"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.3.3",
+      "alias": "1.3.3",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.3",
+        "alias": "1.3",
+        "name": "적응성"
+      },
+      "name_ko": "명확한 지시사항 제공",
+      "name_en": null,
+      "requirement_ko": "지시사항은 모양, 크기, 위치, 방향, 색, 소리 등에 관계없이 인식될 수 있어야 한다.",
+      "summary_ko": "\"오른쪽 빨간 버튼\"처럼 감각적 특성에만 의존한 지시를 피한다.",
+      "wcag": [
+        {
+          "sc": "1.3.3",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [],
+      "kRules": [
+        "k-sensory-instruction"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "안내 문구가 모양·위치·색·소리만으로 대상을 지칭하는지 검토한다."
+      ],
+      "commonErrors_ko": [
+        "\"오른쪽 초록 버튼을 누르세요\"만 안내",
+        "\"위 그림 참고\"만 안내"
+      ],
+      "passExamples_ko": [
+        "\"저장(오른쪽 초록 버튼)을 누르세요\"처럼 텍스트 라벨 병기"
+      ],
+      "components": [
+        "form"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.4.1",
+      "alias": "1.4.1",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.4",
+        "alias": "1.4",
+        "name": "명료성"
+      },
+      "name_ko": "색에 무관한 콘텐츠 인식",
+      "name_en": null,
+      "requirement_ko": "콘텐츠는 색에 관계없이 인식될 수 있어야 한다.",
+      "summary_ko": "색만으로 의미를 구분하지 않고 텍스트·아이콘·패턴을 함께 제공한다.",
+      "wcag": [
+        {
+          "sc": "1.4.1",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [
+        "link-in-text-block"
+      ],
+      "kRules": [],
+      "bRules": [],
+      "testMethod_ko": [
+        "필수 입력·오류 표시가 색 외의 방법(별표·아이콘·텍스트)으로도 구별되는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "빨간 테두리만으로 오류 표시",
+        "범례를 색으로만 구분한 차트"
+      ],
+      "passExamples_ko": [
+        "오류 필드에 빨간 테두리 + \"필수\" 텍스트"
+      ],
+      "components": [
+        "form"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.4.2",
+      "alias": "1.4.2",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.4",
+        "alias": "1.4",
+        "name": "명료성"
+      },
+      "name_ko": "자동 재생 금지",
+      "name_en": null,
+      "requirement_ko": "자동으로 소리가 재생되지 않아야 한다.",
+      "summary_ko": "사용자 동의 없이 소리가 자동 재생되지 않아야 한다.",
+      "wcag": [
+        {
+          "sc": "1.4.2",
+          "level": "A"
+        }
+      ],
+      "automation": "auto",
+      "axeRules": [
+        "no-autoplay-audio"
+      ],
+      "kRules": [
+        "k-autoplay-media"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "페이지 로드 시 autoplay 오디오/비디오가 음소거 없이 재생되는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "배경음악 autoplay",
+        "동영상 autoplay + 음소거 해제 상태"
+      ],
+      "passExamples_ko": [
+        "autoplay 비디오에 muted 속성 적용 또는 자동재생 없음"
+      ],
+      "components": [
+        "media"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.4.3",
+      "alias": "1.4.3",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.4",
+        "alias": "1.4",
+        "name": "명료성"
+      },
+      "name_ko": "텍스트 콘텐츠의 명도 대비",
+      "name_en": null,
+      "requirement_ko": "텍스트 콘텐츠와 배경 간의 명도 대비는 4.5 대 1 이상이어야 한다.",
+      "summary_ko": "텍스트와 배경의 명도 대비가 4.5:1(큰 글자 3:1) 이상이어야 한다.",
+      "wcag": [
+        {
+          "sc": "1.4.3",
+          "level": "AA"
+        }
+      ],
+      "automation": "auto",
+      "axeRules": [
+        "color-contrast"
+      ],
+      "kRules": [],
+      "bRules": [],
+      "testMethod_ko": [
+        "`check_contrast` 도구로 전경·배경 색상 쌍의 대비를 계산한다.",
+        "브라우저 감사로 렌더링된 실제 색상을 측정한다."
+      ],
+      "commonErrors_ko": [
+        "연한 회색 텍스트/배경 조합",
+        "placeholder 텍스트의 낮은 대비"
+      ],
+      "passExamples_ko": [
+        "본문 텍스트 #333 on #fff(대비 12.6:1)"
+      ],
+      "components": [],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "5.4.4",
+      "alias": "1.4.4",
+      "principle": {
+        "no": 5,
+        "alias": 1,
+        "name": "인식의 용이성"
+      },
+      "guideline": {
+        "no": "5.4",
+        "alias": "1.4",
+        "name": "명료성"
+      },
+      "name_ko": "콘텐츠 간의 구분",
+      "name_en": null,
+      "requirement_ko": "이웃한 콘텐츠는 구별될 수 있어야 한다.",
+      "summary_ko": "이웃한 콘텐츠(버튼·카드 등)가 테두리·여백·배경 등으로 구별되어야 한다.",
+      "wcag": [
+        {
+          "sc": "1.4.11",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [],
+      "kRules": [],
+      "bRules": [],
+      "testMethod_ko": [
+        "인접 요소 사이에 시각적 경계(테두리·여백·배경색)가 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "버튼들이 여백 없이 붙어 있음"
+      ],
+      "passExamples_ko": [
+        "카드 사이 여백과 그림자로 구분"
+      ],
+      "components": [
+        "widget"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.1.1",
+      "alias": "2.1.1",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.1",
+        "alias": "2.1",
+        "name": "입력장치 접근성"
+      },
+      "name_ko": "키보드 사용 보장",
+      "name_en": null,
+      "requirement_ko": "모든 기능은 키보드만으로도 사용할 수 있어야 한다.",
+      "summary_ko": "모든 기능을 키보드만으로 사용할 수 있어야 한다(마우스 전용 기능 금지).",
+      "wcag": [
+        {
+          "sc": "2.1.1",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "scrollable-region-focusable",
+        "nested-interactive",
+        "server-side-image-map"
+      ],
+      "kRules": [
+        "k-mouse-only-handler"
+      ],
+      "bRules": [
+        "b-keyboard-reachable"
+      ],
+      "testMethod_ko": [
+        "Tab/Enter/Space만으로 모든 기능을 조작해본다.",
+        "onclick만 있고 키보드 핸들러가 없는 요소가 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "div/span에 onclick만 부여하고 tabindex·키보드 핸들러 없음"
+      ],
+      "passExamples_ko": [
+        "button 요소 사용 또는 div+tabindex+keydown 핸들러"
+      ],
+      "components": [
+        "widget"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.1.2",
+      "alias": "2.1.2",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.1",
+        "alias": "2.1",
+        "name": "입력장치 접근성"
+      },
+      "name_ko": "초점 이동과 표시",
+      "name_en": null,
+      "requirement_ko": "키보드에 의한 초점은 논리적으로 이동해야 하며, 시각적으로 구별할 수 있어야 한다.",
+      "summary_ko": "키보드 초점이 논리적 순서로 이동하고 시각적으로 뚜렷하게 표시되어야 한다.",
+      "wcag": [
+        {
+          "sc": "2.4.3",
+          "level": "A"
+        },
+        {
+          "sc": "2.4.7",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [],
+      "kRules": [
+        "k-outline-none"
+      ],
+      "bRules": [
+        "b-focus-visible",
+        "b-focus-order"
+      ],
+      "testMethod_ko": [
+        "Tab으로 순회하며 DOM 순서와 일치하는지, 초점 스타일이 보이는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "outline: none만 제거하고 대체 스타일 없음",
+        "tabindex 양수값 남용으로 순서 역행"
+      ],
+      "passExamples_ko": [
+        ":focus-visible에 outline과 대비되는 테두리 제공"
+      ],
+      "components": [
+        "widget"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.1.3",
+      "alias": "2.1.3",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.1",
+        "alias": "2.1",
+        "name": "입력장치 접근성"
+      },
+      "name_ko": "조작 가능",
+      "name_en": null,
+      "requirement_ko": "사용자 입력 및 컨트롤은 조작 가능하도록 제공되어야 한다.",
+      "summary_ko": "터치 등 입력 컨트롤은 실수로 조작되지 않을 크기·방식으로 제공한다.",
+      "wcag": [
+        {
+          "sc": "2.5.5",
+          "level": "A"
+        },
+        {
+          "sc": "2.5.8",
+          "level": "AA"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "target-size"
+      ],
+      "kRules": [],
+      "bRules": [
+        "b-target-size-6mm"
+      ],
+      "testMethod_ko": [
+        "대화형 요소의 클릭 가능 영역 크기(약 24px 이상)를 측정한다."
+      ],
+      "commonErrors_ko": [
+        "아이콘 버튼이 16px 이하로 작음",
+        "버튼 간 간격 없이 밀집"
+      ],
+      "passExamples_ko": [
+        "버튼 최소 24×24px, 인접 버튼 간 여백 확보"
+      ],
+      "components": [
+        "widget"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.1.4",
+      "alias": "2.1.4",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.1",
+        "alias": "2.1",
+        "name": "입력장치 접근성"
+      },
+      "name_ko": "문자 단축키",
+      "name_en": null,
+      "requirement_ko": "문자 단축키는 오동작으로 인한 오류를 방지하여야 한다.",
+      "summary_ko": "문자 하나로 된 단축키는 오동작을 막는 장치(끄기·재구성·초점 시에만 동작)를 둔다.",
+      "wcag": [
+        {
+          "sc": "2.1.4",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [],
+      "kRules": [
+        "k-accesskey"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "accesskey나 단일 문자 단축키가 있는지, 끄거나 재설정할 수 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "accesskey를 다른 브라우저 단축키와 충돌하게 지정"
+      ],
+      "passExamples_ko": [
+        "단축키 설정 화면에서 켜기/끄기 제공"
+      ],
+      "components": [],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.2.1",
+      "alias": "2.2.1",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.2",
+        "alias": "2.2",
+        "name": "충분한 시간 제공"
+      },
+      "name_ko": "응답시간 조절",
+      "name_en": null,
+      "requirement_ko": "시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.",
+      "summary_ko": "시간제한이 있는 콘텐츠는 연장·해제할 수 있는 수단을 제공한다.",
+      "wcag": [
+        {
+          "sc": "2.2.1",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "meta-refresh"
+      ],
+      "kRules": [
+        "k-session-timeout-hint"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "세션 타임아웃·자동 새로고침(meta refresh) 여부와 연장 옵션을 확인한다."
+      ],
+      "commonErrors_ko": [
+        "안내 없이 일정 시간 후 자동 로그아웃"
+      ],
+      "passExamples_ko": [
+        "만료 전 경고와 연장 버튼 제공"
+      ],
+      "components": [
+        "auth"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.2.2",
+      "alias": "2.2.2",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.2",
+        "alias": "2.2",
+        "name": "충분한 시간 제공"
+      },
+      "name_ko": "정지 기능 제공",
+      "name_en": null,
+      "requirement_ko": "자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다.",
+      "summary_ko": "자동으로 움직이거나 갱신되는 콘텐츠는 정지·일시정지할 수 있어야 한다.",
+      "wcag": [
+        {
+          "sc": "2.2.2",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "blink",
+        "marquee"
+      ],
+      "kRules": [
+        "k-carousel-no-pause"
+      ],
+      "bRules": [
+        "b-motion-runtime"
+      ],
+      "testMethod_ko": [
+        "캐러셀·슬라이더·자동 갱신 영역에 정지 버튼이 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "자동 슬라이드 배너에 정지 버튼 없음"
+      ],
+      "passExamples_ko": [
+        "캐러셀에 일시정지 버튼 제공"
+      ],
+      "components": [
+        "carousel"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.3.1",
+      "alias": "2.3.1",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.3",
+        "alias": "2.3",
+        "name": "광과민성 발작 예방"
+      },
+      "name_ko": "깜빡임과 번쩍임 사용 제한",
+      "name_en": null,
+      "requirement_ko": "초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.",
+      "summary_ko": "초당 3~50회 주기로 깜빡이는 콘텐츠를 제공하지 않는다(광과민성 발작 예방).",
+      "wcag": [
+        {
+          "sc": "2.3.1",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [],
+      "kRules": [
+        "k-flash-animation"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "애니메이션 주기를 측정해 초당 3~50회 범위에 해당하는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "빠르게 점멸하는 배너 애니메이션"
+      ],
+      "passExamples_ko": [
+        "점멸 없는 부드러운 페이드 애니메이션 사용"
+      ],
+      "components": [],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.4.1",
+      "alias": "2.4.1",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.4",
+        "alias": "2.4",
+        "name": "쉬운 내비게이션"
+      },
+      "name_ko": "반복 영역 건너뛰기",
+      "name_en": null,
+      "requirement_ko": "콘텐츠의 반복되는 영역은 건너뛸 수 있어야 한다.",
+      "summary_ko": "반복되는 내비게이션 등을 건너뛸 수 있는 바로가기 링크를 제공한다.",
+      "wcag": [
+        {
+          "sc": "2.4.1",
+          "level": "A"
+        }
+      ],
+      "automation": "auto",
+      "axeRules": [
+        "bypass",
+        "skip-link"
+      ],
+      "kRules": [
+        "k-skip-link-first",
+        "k-skip-target-exists"
+      ],
+      "bRules": [
+        "b-skip-link-works"
+      ],
+      "testMethod_ko": [
+        "문서의 첫 포커스가 본문 바로가기 링크인지, 대상이 실제로 존재하는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "바로가기 링크 없음",
+        "링크는 있으나 대상 앵커가 없음"
+      ],
+      "passExamples_ko": [
+        "\"본문 바로가기\" 링크가 페이지 첫 요소로 존재"
+      ],
+      "components": [
+        "navigation"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.4.2",
+      "alias": "2.4.2",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.4",
+        "alias": "2.4",
+        "name": "쉬운 내비게이션"
+      },
+      "name_ko": "제목 제공",
+      "name_en": null,
+      "requirement_ko": "페이지, 프레임, 콘텐츠 블록에는 적절한 제목을 제공해야 한다.",
+      "summary_ko": "페이지·프레임·콘텐츠 블록에 적절한 제목을 제공한다.",
+      "wcag": [
+        {
+          "sc": "2.4.2",
+          "level": "A"
+        },
+        {
+          "sc": "2.4.6",
+          "level": "A"
+        }
+      ],
+      "automation": "auto",
+      "axeRules": [
+        "document-title",
+        "frame-title",
+        "frame-title-unique",
+        "page-has-heading-one",
+        "empty-heading"
+      ],
+      "kRules": [
+        "k-title-generic",
+        "k-iframe-title"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "<title>과 iframe title, 대표 h1이 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "<title>이 비어있거나 사이트명만 있음",
+        "iframe title 누락"
+      ],
+      "passExamples_ko": [
+        "<title>페이지 목적 - 사이트명</title>"
+      ],
+      "components": [
+        "iframe"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.4.3",
+      "alias": "2.4.3",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.4",
+        "alias": "2.4",
+        "name": "쉬운 내비게이션"
+      },
+      "name_ko": "적절한 링크 텍스트",
+      "name_en": null,
+      "requirement_ko": "링크 텍스트는 용도나 목적을 이해할 수 있도록 제공해야 한다.",
+      "summary_ko": "링크 텍스트만으로 용도나 목적을 알 수 있어야 한다.",
+      "wcag": [
+        {
+          "sc": "2.4.4",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "link-name"
+      ],
+      "kRules": [
+        "k-link-text-generic",
+        "k-link-same-text-diff-href"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "\"더보기\"·\"클릭\" 같은 일반 텍스트 링크가 있는지, 주변 문맥으로 보완되는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "\"더보기\", \"자세히\" 텍스트만 있는 링크 다수"
+      ],
+      "passExamples_ko": [
+        "\"2026년 예산안 더보기\"처럼 목적을 포함한 링크 텍스트"
+      ],
+      "components": [
+        "link"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.4.4",
+      "alias": "2.4.4",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.4",
+        "alias": "2.4",
+        "name": "쉬운 내비게이션"
+      },
+      "name_ko": "고정된 참조 위치 정보",
+      "name_en": null,
+      "requirement_ko": "전자출판문서 형식의 웹 페이지는 각 페이지로 이동할 수 있는 기능이 있어야 하고, 서식이나 플랫폼에 상관없이 참조 위치 정보를 일관되게 제공·유지해야 한다.",
+      "summary_ko": "전자출판(EPUB) 형식 웹 페이지는 페이지 이동·참조 위치 정보를 일관되게 제공한다.",
+      "wcag": [],
+      "automation": "na",
+      "axeRules": [],
+      "kRules": [],
+      "bRules": [],
+      "testMethod_ko": [
+        "전자출판 콘텐츠인 경우 페이지 번호·목차 이동 기능을 확인한다(해당 시에만 적용)."
+      ],
+      "commonErrors_ko": [
+        "전자출판 뷰어에 페이지 이동 기능 없음"
+      ],
+      "passExamples_ko": [
+        "EPUB 뷰어에 페이지 번호 이동 UI 제공"
+      ],
+      "components": [],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.5.1",
+      "alias": "2.5.1",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.5",
+        "alias": "2.5",
+        "name": "입력 방식"
+      },
+      "name_ko": "단일 포인터 입력 지원",
+      "name_en": null,
+      "requirement_ko": "다중 포인터 또는 경로기반 동작을 통한 입력은 단일 포인터 입력으로도 조작할 수 있어야 한다.",
+      "summary_ko": "다중 터치·경로기반 동작(스와이프 등)은 단일 탭으로도 조작할 수 있어야 한다.",
+      "wcag": [
+        {
+          "sc": "2.5.1",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [],
+      "kRules": [
+        "k-gesture-listener"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "스와이프·핀치 등 제스처 전용 기능에 탭·버튼 대안이 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "스와이프로만 삭제 가능하고 버튼 대안 없음"
+      ],
+      "passExamples_ko": [
+        "스와이프 삭제 + 별도 삭제 버튼 제공"
+      ],
+      "components": [
+        "widget"
+      ],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.5.2",
+      "alias": "2.5.2",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.5",
+        "alias": "2.5",
+        "name": "입력 방식"
+      },
+      "name_ko": "포인터 입력 취소",
+      "name_en": null,
+      "requirement_ko": "단일 포인터 입력으로 실행되는 기능은 취소할 수 있어야 한다.",
+      "summary_ko": "단일 포인터로 실행되는 기능은 완료 전 취소할 수 있어야 한다(mousedown 즉시 실행 금지).",
+      "wcag": [
+        {
+          "sc": "2.5.2",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [],
+      "kRules": [
+        "k-down-event-action"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "버튼 동작이 mousedown/pointerdown 시점이 아니라 클릭 완료(mouseup) 시점에 실행되는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "mousedown에서 즉시 삭제 등 실행"
+      ],
+      "passExamples_ko": [
+        "click 이벤트(포인터를 뗄 때)에서 실행"
+      ],
+      "components": [
+        "widget"
+      ],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.5.3",
+      "alias": "2.5.3",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.5",
+        "alias": "2.5",
+        "name": "입력 방식"
+      },
+      "name_ko": "레이블과 네임",
+      "name_en": null,
+      "requirement_ko": "텍스트 또는 텍스트 이미지가 포함된 레이블이 있는 사용자 인터페이스 구성요소는 네임에 시각적으로 표시되는 해당 텍스트를 포함해야 한다.",
+      "summary_ko": "화면에 보이는 레이블 텍스트가 접근성 이름(name)에도 포함되어야 한다.",
+      "wcag": [
+        {
+          "sc": "2.5.3",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "label-content-name-mismatch"
+      ],
+      "kRules": [],
+      "bRules": [],
+      "testMethod_ko": [
+        "버튼·링크의 시각적 텍스트와 accessible name(aria-label 등)이 일치하는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "시각적으로 \"검색\"인데 aria-label=\"submit\""
+      ],
+      "passExamples_ko": [
+        "시각 텍스트와 aria-label이 같은 문구 포함"
+      ],
+      "components": [
+        "form",
+        "widget"
+      ],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "6.5.4",
+      "alias": "2.5.4",
+      "principle": {
+        "no": 6,
+        "alias": 2,
+        "name": "운용의 용이성"
+      },
+      "guideline": {
+        "no": "6.5",
+        "alias": "2.5",
+        "name": "입력 방식"
+      },
+      "name_ko": "동작기반 작동",
+      "name_en": null,
+      "requirement_ko": "동작기반으로 작동하는 기능은 사용자 인터페이스 구성요소로 조작할 수 있고, 동작기반 기능을 비활성화할 수 있어야 한다.",
+      "summary_ko": "기기를 흔들거나 기울이는 동작으로 작동하는 기능은 UI 컨트롤로도 조작 가능해야 하고 끌 수 있어야 한다.",
+      "wcag": [
+        {
+          "sc": "2.5.4",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [],
+      "kRules": [
+        "k-device-motion"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "devicemotion/deviceorientation 이벤트 사용 여부와 UI 대안·끄기 옵션을 확인한다."
+      ],
+      "commonErrors_ko": [
+        "흔들기로만 실행 취소, 버튼 대안 없음"
+      ],
+      "passExamples_ko": [
+        "흔들기 기능에 \"실행 취소\" 버튼 병행 제공"
+      ],
+      "components": [],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "7.1.1",
+      "alias": "3.1.1",
+      "principle": {
+        "no": 7,
+        "alias": 3,
+        "name": "이해의 용이성"
+      },
+      "guideline": {
+        "no": "7.1",
+        "alias": "3.1",
+        "name": "가독성"
+      },
+      "name_ko": "기본 언어 표시",
+      "name_en": null,
+      "requirement_ko": "주로 사용하는 언어를 명시해야 한다.",
+      "summary_ko": "페이지의 주요 언어를 html lang 속성으로 명시한다.",
+      "wcag": [
+        {
+          "sc": "3.1.1",
+          "level": "A"
+        }
+      ],
+      "automation": "auto",
+      "axeRules": [
+        "html-has-lang",
+        "html-lang-valid",
+        "html-xml-lang-mismatch",
+        "valid-lang"
+      ],
+      "kRules": [
+        "k-lang-ko-expected"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "<html lang> 값이 실제 콘텐츠 언어와 일치하는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "lang 속성 누락",
+        "본문은 한국어인데 lang=\"en\""
+      ],
+      "passExamples_ko": [
+        "<html lang=\"ko\">"
+      ],
+      "components": [],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "7.2.1",
+      "alias": "3.2.1",
+      "principle": {
+        "no": 7,
+        "alias": 3,
+        "name": "이해의 용이성"
+      },
+      "guideline": {
+        "no": "7.2",
+        "alias": "3.2",
+        "name": "예측 가능성"
+      },
+      "name_ko": "사용자 요구에 따른 실행",
+      "name_en": null,
+      "requirement_ko": "사용자가 의도하지 않은 기능(새 창, 초점에 의한 맥락 변화 등)은 실행되지 않아야 한다.",
+      "summary_ko": "사용자가 의도하지 않은 새 창 열기·맥락 변화가 자동으로 실행되지 않아야 한다.",
+      "wcag": [
+        {
+          "sc": "3.2.1",
+          "level": "A"
+        },
+        {
+          "sc": "3.2.2",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [],
+      "kRules": [
+        "k-new-window-notice",
+        "k-select-onchange",
+        "k-onload-popup"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "target=_blank 링크에 안내가 있는지, select 변경만으로 페이지 이동이 일어나는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "\"새 창\" 안내 없이 target=_blank",
+        "select onchange로 자동 이동"
+      ],
+      "passExamples_ko": [
+        "새 창 링크 텍스트에 \"(새 창)\" 명시"
+      ],
+      "components": [
+        "link"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "7.2.2",
+      "alias": "3.2.2",
+      "principle": {
+        "no": 7,
+        "alias": 3,
+        "name": "이해의 용이성"
+      },
+      "guideline": {
+        "no": "7.2",
+        "alias": "3.2",
+        "name": "예측 가능성"
+      },
+      "name_ko": "찾기 쉬운 도움 정보",
+      "name_en": null,
+      "requirement_ko": "도움 정보가 제공되는 경우, 각 페이지에서 동일한 상대적인 순서로 접근할 수 있어야 한다.",
+      "summary_ko": "도움말·문의 등 도움 정보는 여러 페이지에서 상대적으로 동일한 위치·순서로 제공한다.",
+      "wcag": [
+        {
+          "sc": "3.2.6",
+          "level": "A"
+        }
+      ],
+      "automation": "manual",
+      "axeRules": [],
+      "kRules": [],
+      "bRules": [],
+      "testMethod_ko": [
+        "여러 페이지의 도움말 링크 위치·탭 순서가 일관되는지 비교한다(수동)."
+      ],
+      "commonErrors_ko": [
+        "페이지마다 고객센터 링크 위치가 다름"
+      ],
+      "passExamples_ko": [
+        "모든 페이지 푸터 동일 위치에 도움말 링크"
+      ],
+      "components": [
+        "navigation"
+      ],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "7.3.1",
+      "alias": "3.3.1",
+      "principle": {
+        "no": 7,
+        "alias": 3,
+        "name": "이해의 용이성"
+      },
+      "guideline": {
+        "no": "7.3",
+        "alias": "3.3",
+        "name": "입력 도움"
+      },
+      "name_ko": "오류 정정",
+      "name_en": null,
+      "requirement_ko": "입력 오류를 정정할 수 있는 방법을 제공해야 한다.",
+      "summary_ko": "입력 오류가 발생하면 원인과 정정 방법을 안내한다.",
+      "wcag": [
+        {
+          "sc": "3.3.1",
+          "level": "A"
+        },
+        {
+          "sc": "3.3.3",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [],
+      "kRules": [
+        "k-error-association"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "폼 제출 오류 시 어떤 필드가 왜 잘못됐는지 안내되는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "\"오류가 발생했습니다\"만 표시하고 원인 미제공"
+      ],
+      "passExamples_ko": [
+        "\"휴대전화 번호는 숫자 11자리로 입력하세요\"처럼 구체적 안내"
+      ],
+      "components": [
+        "form"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "7.3.2",
+      "alias": "3.3.2",
+      "principle": {
+        "no": 7,
+        "alias": 3,
+        "name": "이해의 용이성"
+      },
+      "guideline": {
+        "no": "7.3",
+        "alias": "3.3",
+        "name": "입력 도움"
+      },
+      "name_ko": "레이블 제공",
+      "name_en": null,
+      "requirement_ko": "사용자 입력에는 대응하는 레이블을 제공해야 한다.",
+      "summary_ko": "입력 필드에는 대응하는 레이블(label)을 제공한다.",
+      "wcag": [
+        {
+          "sc": "3.3.2",
+          "level": "A"
+        },
+        {
+          "sc": "1.3.1",
+          "level": "A"
+        },
+        {
+          "sc": "4.1.2",
+          "level": "A"
+        }
+      ],
+      "automation": "auto",
+      "axeRules": [
+        "label",
+        "label-title-only",
+        "select-name",
+        "form-field-multiple-labels"
+      ],
+      "kRules": [
+        "k-placeholder-only-label"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "input에 연결된 <label>이나 aria-label이 있는지 확인한다(placeholder만으로는 부족)."
+      ],
+      "commonErrors_ko": [
+        "placeholder만 있고 label 없음"
+      ],
+      "passExamples_ko": [
+        "<label for=\"email\">이메일</label>"
+      ],
+      "components": [
+        "form"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "7.3.3",
+      "alias": "3.3.3",
+      "principle": {
+        "no": 7,
+        "alias": 3,
+        "name": "이해의 용이성"
+      },
+      "guideline": {
+        "no": "7.3",
+        "alias": "3.3",
+        "name": "입력 도움"
+      },
+      "name_ko": "접근 가능한 인증",
+      "name_en": null,
+      "requirement_ko": "인증 과정은 인지 기능 테스트에만 의존해서는 안 된다.",
+      "summary_ko": "인증 과정이 퍼즐 풀이 등 인지 기능 테스트에만 의존하지 않아야 한다(대안 제공).",
+      "wcag": [
+        {
+          "sc": "3.3.8",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [],
+      "kRules": [
+        "k-captcha-detect"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "캡차 등 인증 수단에 오디오·대체 인증 등 대안이 있는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "이미지 캡차만 제공하고 대안 없음"
+      ],
+      "passExamples_ko": [
+        "캡차 + 이메일 인증 등 대체 수단 제공"
+      ],
+      "components": [
+        "auth"
+      ],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "7.3.4",
+      "alias": "3.3.4",
+      "principle": {
+        "no": 7,
+        "alias": 3,
+        "name": "이해의 용이성"
+      },
+      "guideline": {
+        "no": "7.3",
+        "alias": "3.3",
+        "name": "입력 도움"
+      },
+      "name_ko": "반복 입력 정보",
+      "name_en": null,
+      "requirement_ko": "반복되는 입력 정보는 자동 입력 또는 선택 입력할 수 있어야 한다.",
+      "summary_ko": "같은 세션에서 반복 입력해야 하는 정보는 자동완성·재사용할 수 있어야 한다.",
+      "wcag": [
+        {
+          "sc": "3.3.7",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "autocomplete-valid"
+      ],
+      "kRules": [
+        "k-autocomplete-missing"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "이름·주소 등 필드에 autocomplete 속성이 있는지, 이전 입력값 재사용이 가능한지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "배송지 정보를 결제 단계에서 다시 전부 입력해야 함"
+      ],
+      "passExamples_ko": [
+        "autocomplete=\"name\" 등 속성 부여, \"이전 정보와 동일\" 체크박스 제공"
+      ],
+      "components": [
+        "form"
+      ],
+      "newIn22": true,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "8.1.1",
+      "alias": "4.1.1",
+      "principle": {
+        "no": 8,
+        "alias": 4,
+        "name": "견고성"
+      },
+      "guideline": {
+        "no": "8.1",
+        "alias": "4.1",
+        "name": "문법 준수"
+      },
+      "name_ko": "마크업 오류 방지",
+      "name_en": null,
+      "requirement_ko": "마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다.",
+      "summary_ko": "요소의 열고 닫음, 중첩, 속성 선언에 문법 오류가 없어야 한다.",
+      "wcag": [
+        {
+          "sc": "4.1.1",
+          "level": "A"
+        }
+      ],
+      "automation": "auto",
+      "axeRules": [
+        "duplicate-id-active",
+        "duplicate-id-aria"
+      ],
+      "kRules": [
+        "k-parse-errors"
+      ],
+      "bRules": [],
+      "testMethod_ko": [
+        "HTML 파서로 태그 닫힘·중첩·중복 id 오류를 검사한다."
+      ],
+      "commonErrors_ko": [
+        "id 속성 중복",
+        "태그를 닫지 않음"
+      ],
+      "passExamples_ko": [
+        "유효성 검사기를 통과하는 마크업"
+      ],
+      "components": [],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    },
+    {
+      "id": "8.2.1",
+      "alias": "4.2.1",
+      "principle": {
+        "no": 8,
+        "alias": 4,
+        "name": "견고성"
+      },
+      "guideline": {
+        "no": "8.2",
+        "alias": "4.2",
+        "name": "웹 애플리케이션 접근성"
+      },
+      "name_ko": "웹 애플리케이션 접근성 준수",
+      "name_en": null,
+      "requirement_ko": "콘텐츠에 포함된 웹 애플리케이션은 접근성이 있어야 한다.",
+      "summary_ko": "웹 애플리케이션(위젯 등)에 사용된 ARIA 역할·속성이 접근성 API 규격에 맞아야 한다.",
+      "wcag": [
+        {
+          "sc": "4.1.2",
+          "level": "A"
+        }
+      ],
+      "automation": "assist",
+      "axeRules": [
+        "aria-allowed-attr",
+        "aria-required-attr",
+        "aria-roles",
+        "aria-valid-attr",
+        "aria-valid-attr-value",
+        "aria-hidden-focus",
+        "aria-hidden-body",
+        "button-name",
+        "aria-command-name",
+        "aria-input-field-name",
+        "aria-toggle-field-name",
+        "aria-dialog-name",
+        "aria-progressbar-name",
+        "aria-tooltip-name",
+        "aria-treeitem-name",
+        "presentation-role-conflict"
+      ],
+      "kRules": [],
+      "bRules": [
+        "b-widget-keyboard"
+      ],
+      "testMethod_ko": [
+        "커스텀 위젯의 role·aria-* 속성이 유효하고 name을 갖는지 확인한다."
+      ],
+      "commonErrors_ko": [
+        "버튼 역할인데 접근 가능한 이름 없음",
+        "잘못된 aria 속성값"
+      ],
+      "passExamples_ko": [
+        "role=\"dialog\" + aria-labelledby로 이름 제공"
+      ],
+      "components": [
+        "modal",
+        "widget"
+      ],
+      "newIn22": false,
+      "sources": [
+        "kwcag22-a11ykr",
+        "kwcag22-websoul"
+      ]
+    }
+  ]
+}

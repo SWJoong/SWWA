@@ -1,0 +1,7 @@
+{
+  "meaningless": [
+    "이미지", "사진", "그림", "아이콘", "썸네일", "배너",
+    "img", "image", "photo", "picture", "icon", "thumbnail", "banner"
+  ],
+  "filenamePattern": "\\.(png|jpe?g|gif|svg|webp)$"
+}

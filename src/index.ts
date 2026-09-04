@@ -7,10 +7,12 @@
  * 그리고 입력·페이지 내용은 저장·전송하지 않는다(NFR-01·03).
  */
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { loadDataBundle } from "./data/loader.js";
 import { createServer } from "./server.js";
 
 async function main(): Promise<void> {
-  const server = createServer();
+  const data = loadDataBundle();
+  const server = createServer(data);
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }

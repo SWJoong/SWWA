@@ -1,0 +1,68 @@
+{
+  "sources": [
+    {
+      "id": "kwcag22-official",
+      "title": "한국형 웹 콘텐츠 접근성 지침 2.2 (KS X OT0003)",
+      "url": null,
+      "accessedOn": "2026-09-04",
+      "status": "needsVerification",
+      "license": "원문 저작권 국립전파연구원(국가표준). 요구 문장 한 줄 인용만 허용"
+    },
+    {
+      "id": "kwcag22-a11ykr",
+      "title": "KWCAG 2.2 비공식 HTML판",
+      "url": "https://a11ykr.github.io/kwcag22/",
+      "accessedOn": "2026-09-04",
+      "status": "ok",
+      "license": "비공식 변환본. 원문 저작권은 국립전파연구원, 이 사이트는 가독성을 위한 3자 변환"
+    },
+    {
+      "id": "kwcag22-websoul",
+      "title": "웹소울랩 KWCAG 2.2 안내",
+      "url": "https://websoul.co.kr/accessibility/WA_guide22.asp",
+      "accessedOn": "2026-09-04",
+      "status": "ok",
+      "license": "접근성 컨설팅사의 해설 자료. 요구 문장 대조용으로만 참고"
+    },
+    {
+      "id": "rra-kcs",
+      "title": "국립전파연구원 방송통신표준(KCS) 공고",
+      "url": null,
+      "accessedOn": "2026-09-04",
+      "status": "needsVerification",
+      "license": "표준 번호 KS X OT0003 확인 필요"
+    },
+    {
+      "id": "wcag22-w3c",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "accessedOn": "2026-09-04",
+      "status": "ok",
+      "license": "W3C Document License"
+    },
+    {
+      "id": "axe-core",
+      "title": "axe-core (Deque Systems)",
+      "url": "https://github.com/dequelabs/axe-core",
+      "accessedOn": "2026-09-04",
+      "status": "ok",
+      "license": "MPL-2.0. npm 의존성으로만 사용, 소스 재배포 없음"
+    },
+    {
+      "id": "easyread-mcp",
+      "title": "EASYREAD(전제 프로젝트, 동일 저자)",
+      "url": "https://github.com/SWJoong/EASYREAD",
+      "accessedOn": "2026-09-04",
+      "status": "ok",
+      "license": "컨벤션·schema-dialect.ts 등 파일 재사용(동일 저자·MIT)"
+    },
+    {
+      "id": "certification-agency",
+      "title": "웹접근성 품질인증 기관 공지(전문가·사용자 심사 기준 수치)",
+      "url": null,
+      "accessedOn": "2026-09-04",
+      "status": "needsVerification",
+      "license": "준수율·유효기간 수치는 인증기관이 개정할 수 있어 릴리스마다 재확인 필요"
+    }
+  ]
+}

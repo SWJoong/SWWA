@@ -1,0 +1,8 @@
+{
+  "generic": [
+    "더보기", "여기", "여기를 클릭", "클릭", "클릭하세요", "자세히", "자세히 보기",
+    "바로가기", "이동", "링크", "상세보기", "전체보기",
+    "more", "click here", "read more", "learn more", "view more", "here", "link"
+  ],
+  "generic_prefix": ["자세히 보기", "더 알아보기"]
+}

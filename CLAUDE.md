@@ -59,13 +59,19 @@ claude --plugin-dir . # 플러그인 로컬 테스트
 
 ## 현재 작업 현황
 
+> **비고(2026-09-04)**: W측 세션이 당분간 작업 불가하여 U가 T-03부터 W 역할(체크리스트 확정·
+> 테스트 작성)까지 겸해서 진행 중이다. 레인 표시·test-first 원칙은 계속 지키되 핸드오프 대기 없이
+> 순서대로 이어서 처리한다.
+
 ### 완료
 - **T-00 저장소 부트스트랩** (2026-09-04, W) — `docs/plan/00~07`, 단일 소스 `kwcag22-checklist.md`, U측 인계서 `docs/HANDOFF-U.md`, CLAUDE.md, LICENSE, .gitignore, README
-- **T-01 하네스 세팅** (2026-09-04, U) — `scripts/agent-sync.sh`·`agent-sync` 채널 브랜치·`.claude/settings.json` SessionStart 훅·`docs/CLAUDE-INSTANCE-{U,W}.md`. PR #1(`feat/t-01-harness`), 병합 대기
-- **T-02 스캐폴드** (2026-09-04, U) — `package.json`(swwa-mcp)·tsconfig·eslint·vitest·`src/{index,server,messages,schema-dialect}.ts`·`bin/swwa-mcp.mjs`·`.claude-plugin/{plugin,marketplace}.json`·`.mcp.json`·`skills/{a11y-review,a11y-audit}/SKILL.md` 골격·`.github/workflows/{ci,cross-platform}.yml`·이슈·PR 템플릿·`SECURITY.md`. `npm run check` 통과, Inspector `initialize` 확인, `claude plugin validate .` 통과. PR(`feat/t-02-scaffold`), 병합 대기
+- **T-01 하네스 세팅** (2026-09-04, U) — `scripts/agent-sync.sh`·`agent-sync` 채널 브랜치·`.claude/settings.json` SessionStart 훅·`docs/CLAUDE-INSTANCE-{U,W}.md`. PR #1, main 병합 완료
+- **T-02 스캐폴드** (2026-09-04, U) — `package.json`(swwa-mcp)·tsconfig·eslint·vitest·`src/{index,server,messages,schema-dialect}.ts`·`bin/swwa-mcp.mjs`·`.claude-plugin/{plugin,marketplace}.json`·`.mcp.json`·`skills/{a11y-review,a11y-audit}/SKILL.md` 골격·`.github/workflows/{ci,cross-platform}.yml`·이슈·PR 템플릿·`SECURITY.md`. PR #2, main 병합 완료
+- **T-03 단일 소스 확정·데이터 계약 테스트** (2026-09-04, U가 W 역할 겸임) — `kwcag-guide/SKILL.md`·`wcag-mapping.md`·`sources.md` 신규, `tests/data/{checklist-source.ts,kwcag22-source.test.ts,kwcag22.test.ts}` 작성. PR #3
+- **T-04 데이터 자산·조회 도구** (2026-09-04, U) — `assets/*.json`(kwcag22·wcag22·axe-rule-map·certification·link-text-ko·alt-text-ko·sources)·`assets/mobile-app-2.0.md`·`src/data/*` 로더 6종·`scripts/copy-checklist.mjs`·`lookup_checkpoint`·`get_checklist`·리소스 6종. `npm run check` 통과(T-03 데이터 계약 테스트 16건 전부 초록), Inspector로 도구·리소스 동작 확인. PR #4(T-03 PR #3에 스택)
 
 ### 활성
-- **T-04 데이터 자산·조회 도구 대기** (U) — T-03(W)의 `kwcag22-checklist.md` 확정·데이터 계약 테스트를 pull해 초록으로 만드는 것이 착수 조건
+- **T-06 정적 엔진·T1 규칙 18개 준비** — 다음 착수 대상. `engine/static.ts`·`rules/k/*`·`check_html`·`check_contrast`. 선행 골든 테스트(T-05)는 W 몫이었으나 W 부재로 U가 겸해 최소 계약 테스트를 먼저 작성한 뒤 구현할 계획
 
 ### 다음
-- **T-03 단일 소스 확정·데이터 계약 테스트** (W, T-01·T-02와 병행 가능) → T-04 데이터·조회 도구 (U) · 전체 WBS: `docs/plan/06-harness-engineering.md` §5
+- T-06 정적 엔진 → T-07 브라우저 엔진 → T-09 인증 준비도·프롬프트 → T-10 스킬 본문 → T-12 배포 · 전체 WBS: `docs/plan/06-harness-engineering.md` §5
