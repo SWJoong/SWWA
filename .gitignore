@@ -1,0 +1,25 @@
+# dependencies / build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# audit outputs (스크린샷·리포트는 요청 시에만 생성)
+outputs/
+test-results/
+playwright-report/
+
+# env / local
+.env
+.env.*
+.claude/settings.local.json
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# coverage
+coverage/
