@@ -1,5 +1,5 @@
 // registry.ts가 규칙 목록·검사항목 귀속을 단일 소스 데이터와 대조하는지 검증한다(ADR-04).
-import { KRULES, BRULES, validateRegistry } from "../../src/rules/registry.js";
+import { KRULES, T2RULES, ALL_K_RULES, BRULES, validateRegistry } from "../../src/rules/registry.js";
 import { loadDataBundle } from "../../src/data/loader.js";
 import { parseRuleCatalog } from "../data/checklist-source.js";
 
@@ -44,5 +44,26 @@ describe("규칙 레지스트리 ↔ 단일 소스 정합성", () => {
       expect(rule.engine).toBe("b");
       expect(data.kwcag22.findById(rule.kwcag)).toBeDefined();
     }
+  });
+
+  it("TC-REGISTRY-07: T2 규칙이 정확히 13개이고 §5 T2 목록과 ID 집합이 같다", () => {
+    const catalog = parseRuleCatalog();
+    expect(T2RULES.length).toBe(13);
+    expect(T2RULES.map((r) => r.id).sort()).toEqual([...catalog.t2].sort());
+  });
+
+  it("TC-REGISTRY-08: 모든 T2 규칙이 tier T2이고 kwcag22.json에 실재하는 검사항목에 귀속된다", () => {
+    for (const rule of T2RULES) {
+      expect(rule.tier).toBe("T2");
+      expect(rule.engine).toBe("k");
+      expect(data.kwcag22.findById(rule.kwcag)).toBeDefined();
+    }
+  });
+
+  it("TC-REGISTRY-09: ALL_K_RULES는 T1+T2 합집합(31개)이고 ID 중복이 없다", () => {
+    expect(ALL_K_RULES.length).toBe(31);
+    const ids = ALL_K_RULES.map((r) => r.id);
+    expect(new Set(ids).size).toBe(31);
+    expect(() => validateRegistry(ALL_K_RULES, data)).not.toThrow();
   });
 });

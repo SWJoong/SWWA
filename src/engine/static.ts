@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { Worker } from "node:worker_threads";
 import { JSDOM } from "jsdom";
 import axeCore from "axe-core";
-import { KRULES } from "../rules/registry.js";
+import { ALL_K_RULES } from "../rules/registry.js";
 import { normalizeAxeResults } from "../normalize/axe.js";
 import { loadDataBundle } from "../data/loader.js";
 import type { StaticContext } from "../rules/types.js";
@@ -117,7 +117,7 @@ export async function runStaticCore(opts: RunStaticOptions): Promise<RunStaticRe
         baseUrl: opts.baseUrl,
         data: opts.data,
       };
-      for (const rule of KRULES) {
+      for (const rule of ALL_K_RULES) {
         if (opts.excludeRules?.includes(rule.id)) continue;
         try {
           kFindings.push(...rule.run(ctx));

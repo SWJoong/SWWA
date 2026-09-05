@@ -16,3 +16,18 @@ export { rule as selectOnchangeRule } from "./k-select-onchange.js";
 export { rule as placeholderOnlyLabelRule } from "./k-placeholder-only-label.js";
 export { rule as captchaDetectRule } from "./k-captcha-detect.js";
 export { rule as parseErrorsRule } from "./k-parse-errors.js";
+
+// T2 규칙(휴리스틱, M3·백로그)
+export { rule as sensoryInstructionRule } from "./k-sensory-instruction.js";
+export { rule as outlineNoneRule } from "./k-outline-none.js";
+export { rule as accesskeyRule } from "./k-accesskey.js";
+export { rule as sessionTimeoutHintRule } from "./k-session-timeout-hint.js";
+export { rule as carouselNoPauseRule } from "./k-carousel-no-pause.js";
+export { rule as flashAnimationRule } from "./k-flash-animation.js";
+export { rule as linkSameTextDiffHrefRule } from "./k-link-same-text-diff-href.js";
+export { rule as gestureListenerRule } from "./k-gesture-listener.js";
+export { rule as downEventActionRule } from "./k-down-event-action.js";
+export { rule as deviceMotionRule } from "./k-device-motion.js";
+export { rule as onloadPopupRule } from "./k-onload-popup.js";
+export { rule as errorAssociationRule } from "./k-error-association.js";
+export { rule as autocompleteMissingRule } from "./k-autocomplete-missing.js";

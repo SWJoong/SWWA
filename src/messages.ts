@@ -88,6 +88,73 @@ export const captchaDetect = {
   fix: "이미지 캡차만 제공하지 말고 오디오 캡차 등 대체 인증 수단을 함께 제공하세요.",
 };
 
+// --- T2 규칙(휴리스틱, 대부분 outcome incomplete = 사람 확인 필요) ---
+
+export const sensoryInstruction = {
+  message: (word: string): string => `감각적 특성("${word}")에만 의존한 지시일 수 있습니다.`,
+  fix: "모양·위치·색·소리 대신(또는 함께) 텍스트 라벨로 대상을 지칭하세요.",
+};
+
+export const outlineNone = {
+  message: "초점 스타일(:focus)에서 outline을 제거하고 대안이 없어 보입니다.",
+  fix: ":focus/:focus-visible에 outline 또는 box-shadow·border 등 대체 초점 표시를 제공하세요.",
+};
+
+export const accesskey = {
+  message: (key: string): string => `accesskey="${key}"가 사용되었습니다(단축키 충돌·오동작 검토 필요).`,
+  fix: "문자 단축키는 끄거나 재설정할 수 있게 하고, 다른 단축키와 충돌하지 않는지 확인하세요.",
+};
+
+export const sessionTimeoutHint = {
+  message: "세션 만료·자동 로그아웃 안내로 보이는 문구가 있습니다.",
+  fix: "시간제한이 있다면 연장·해제 수단(경고 후 연장 버튼 등)을 제공하는지 확인하세요.",
+};
+
+export const carouselNoPause = {
+  message: "자동으로 넘어가는 슬라이더/캐러셀에 정지 컨트롤이 없어 보입니다.",
+  fix: "일시정지/정지 버튼을 제공하세요. (실제 자동 전환 여부는 브라우저 감사로 확인)",
+};
+
+export const flashAnimation = {
+  message: "짧은 주기로 무한 반복되는 애니메이션이 있습니다(깜빡임 검토 필요).",
+  fix: "초당 3~50회 점멸에 해당하지 않는지 확인하고, 필요하면 주기를 늘리거나 반복을 제한하세요.",
+};
+
+export const linkSameTextDiffHref = {
+  message: (text: string): string => `같은 링크 텍스트("${text}")가 서로 다른 곳을 가리킵니다.`,
+  fix: "링크 텍스트에 목적지를 구분하는 정보를 넣거나 aria-label로 구별하세요.",
+};
+
+export const gestureListener = {
+  message: "다중 포인터·경로 기반 제스처 처리로 보이는 코드가 있습니다.",
+  fix: "스와이프·핀치 등 제스처 전용 기능에 단일 탭·버튼 대안을 제공하세요.",
+};
+
+export const downEventAction = {
+  message: "포인터를 누르는 시점(down)에 기능이 실행될 수 있습니다.",
+  fix: "down이 아니라 클릭 완료(up) 시점에 실행하고, 이동해 벗어나면 취소되게 하세요.",
+};
+
+export const deviceMotion = {
+  message: "기기 동작(흔들기·기울이기) 이벤트를 사용하는 것으로 보입니다.",
+  fix: "동작 기반 기능에 UI 컨트롤 대안을 제공하고 비활성화할 수 있게 하세요.",
+};
+
+export const onloadPopup = {
+  message: "페이지 로드 시 새 창(window.open)을 여는 코드로 보입니다.",
+  fix: "사용자가 의도하지 않은 새 창을 자동으로 열지 마세요.",
+};
+
+export const errorAssociation = {
+  message: "aria-invalid 입력에 오류 메시지 연결(aria-describedby)이 없습니다.",
+  fix: "오류 메시지 요소의 id를 입력의 aria-describedby로 연결하세요.",
+};
+
+export const autocompleteMissing = {
+  message: (field: string): string => `개인정보 입력 필드(${field})에 autocomplete 속성이 없습니다.`,
+  fix: "이름·이메일·전화·주소 등에는 표준 autocomplete 값을 지정해 자동 입력을 돕습니다.",
+};
+
 export const bFocusVisible = {
   message: "초점을 받아도 시각적으로 구별되는 스타일 변화가 없습니다.",
   fix: ":focus 또는 :focus-visible에 outline·box-shadow 등 눈에 띄는 스타일을 추가하세요.",

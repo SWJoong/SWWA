@@ -25,6 +25,26 @@ export const KRULES: StaticRule[] = [
   k.parseErrorsRule,
 ];
 
+/** T2 정적 규칙(휴리스틱, 단일 소스 §5). 대부분 outcome incomplete(사람 확인 필요). */
+export const T2RULES: StaticRule[] = [
+  k.sensoryInstructionRule,
+  k.outlineNoneRule,
+  k.accesskeyRule,
+  k.sessionTimeoutHintRule,
+  k.carouselNoPauseRule,
+  k.flashAnimationRule,
+  k.linkSameTextDiffHrefRule,
+  k.gestureListenerRule,
+  k.downEventActionRule,
+  k.deviceMotionRule,
+  k.onloadPopupRule,
+  k.errorAssociationRule,
+  k.autocompleteMissingRule,
+];
+
+/** 정적 엔진이 실행하는 전체 k-규칙(T1 + T2). */
+export const ALL_K_RULES: StaticRule[] = [...KRULES, ...T2RULES];
+
 /** 브라우저 규칙 6개(§5 B tier). 백로그 b-widget-keyboard는 아직 구현하지 않는다. */
 export const BRULES: BrowserRule[] = [
   b.focusVisibleRule,
