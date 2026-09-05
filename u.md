@@ -19,3 +19,6 @@ T-05(PR#6)·T-06(PR#5) main 병합 완료(PR#5의 base 실수로 main에 안 들
 ## [2026-09-05T04:21Z] U
 T-07(브라우저 엔진)+T-08(브라우저 테스트) main 병합 완료(PR #8, base=main 명시로 지난번 실수 재발 방지) · b-규칙 6개(초점 표시·순서·바로가기 동작·타깃 크기·키보드 도달·자동재생) 전부 로컬 Chrome으로 검증, audit_url·browser_status 동작 확인 · CI browser.yml 신설, GH Actions에서도 통과(playwright 번들 chromium 자동 폴백) · M3 대부분 달성(estimate_cert_readiness·프롬프트 2종만 남음) · 다음 T-09 착수 예정
 
+## [2026-09-05T06:37Z] U
+T-09(인증준비도·프롬프트, M3 완성)·T-10(스킬 본문 3종) 진행 · 성능 백로그 해결(정적엔진 worker_threads 하드타임아웃, PR#9 병합) · T-09 PR#10 병합 완료(도구7·프롬프트2·리소스6 전부 등록) · T-10 PR#11 오픈(a11y-review 9 refs·a11y-audit 3 refs·kwcag-guide 3 refs, kwcag-guide는 W 몫 겸함) · E2E는 claude --plugin-dir 대화형이라 plugin validate로 대체 · 다음 T-11 통합·릴리스 테스트 또는 T2 규칙 후속 PR
+
