@@ -82,7 +82,7 @@ const kFindings = runStaticRules(rules.k, { document, window, html, baseUrl, dat
 - 크기 상한 2MB, 규칙별 try/catch, 전체 타임아웃 10초(초과 시 `E_TIMEOUT`).
 - `STATIC_DISABLED_RULES`는 [02](02-architecture.md) §3.1 목록을 `axe-rule-map.json`의 `staticDisabled`와 동기.
 
-### 5.1 알려진 한계 — 대용량 문서 성능 (T-06, 2026-09-05)
+### 5.1 대용량 문서 성능·하드 타임아웃 (T-06 발견, 성능 백로그로 해결 2026-09-05)
 
 `axe.run()`의 `resultTypes`에 `"passes"`를 포함하면 axe-core가 모든 통과 사례까지 리포트하느라
 문서 크기에 따라 수십 배 느려진다는 것을 확인했다(500행 표 기준 <1초 → 50초 이상). **이 프로젝트는
@@ -100,18 +100,34 @@ const kFindings = runStaticRules(rules.k, { document, window, html, baseUrl, dat
 | 〃 | 100KB | ~18초 |
 | 〃 | 200KB+ | 25초 이상(타임아웃) |
 
-**완료 기준 "500KB ≤ 2초"는 현재 구현으로 충족하지 못한다.** 또한 axe-core의 규칙 평가가 충분히 긴
-구간 동안 동기적으로 실행되는 경우가 있어, `engine/static.ts`의 10초 타임아웃(`Promise.race`)이
-그 구간 동안은 선점하지 못할 수 있다 — 극단적으로 큰/조밀한 입력에서는 서버가 응답 없이 오래
-멈출 위험이 남아 있다.
+axe-core의 규칙 평가는 충분히 긴 구간 동안 **동기적으로** 실행되는 경우가 있어, `Promise.race` +
+`setTimeout` 방식의 소프트 타임아웃은 그 구간을 선점하지 못한다(setTimeout 콜백이 이벤트 루프에
+오르지 못함). 실측으로 200KB+ 조밀 페이지에서 10초 소프트 타임아웃이 발화하지 않고 서버가 오래
+멈추는 것을 확인했다.
 
-**후속 조치가 필요하다(백로그)**:
-1. `worker_threads`로 정적 엔진을 분리해 실제로 강제 종료 가능한 타임아웃 구현
-2. 페이지 규모에 따라 axe 규칙 서브셋을 더 줄이거나 단계적으로 실행하는 방안 검토
-3. 완료 기준 자체("500KB ≤ 2초")를 실측 근거로 재조정할지 검토(일반 사용 사례는 이미 충분히 빠름)
+**해결(2026-09-05, `perf/static-worker-timeout`)**: 정적 엔진을 `worker_threads`로 분리했다
+(`src/engine/static-worker.ts`). `runStatic`은 컴파일된 워커(`dist/engine/static-worker.js`)가 있으면
+워커에서 `runStaticCore`를 실행하고, 하드 타임아웃(기본 10초) 초과 시 `worker.terminate()`로 스레드를
+**강제 종료**한다 — 동기 CPU 점유도 확실히 중단되어 `E_TIMEOUT`으로 깔끔하게 응답한다(4000행 표 +
+500ms 타임아웃이 ~500ms에 종료됨을 회귀 테스트 `tests/engine/static-worker.test.ts`로 고정). 워커가
+없는 개발(tsx)·테스트(vitest는 src를 실행하므로 워커 .js 부재) 환경에서는 인라인으로 실행하며
+best-effort 소프트 타임아웃만 적용한다. DataBundle은 함수를 포함해 스레드 간 클론이 불가하므로
+워커가 `loadDataBundle()`로 직접 로드하고, 메인은 직렬화 가능한 입력(html·baseUrl·ruleset·
+excludeRules)만 전달한다.
 
-일반적인 사용(컴포넌트·페이지 단위 검사, 수백 KB 미만)은 문제 없이 빠르다 — 이 한계는 대용량 페이지
-전체를 한 번에 검사하는 시나리오(예: `audit_site` 백로그, 대형 목록 페이지)에서만 나타난다.
+**트레이드오프**: 워커는 호출마다 새로 스폰되어 jsdom·axe 소스(1.3MB) 로드 비용을 매번 치른다 —
+소형 페이지 인라인 ~40~240ms → 워커 ~800ms. 온디맨드 접근성 검사 도구의 사용 패턴상 호출당 1초
+미만은 수용 가능하다고 보고, 상시 워커(prod) 방식을 택했다.
+
+**남은 백로그(선택)**:
+1. 워커 상시 재사용(warm pool of 1)으로 호출당 스폰 비용 제거 — 호출당 지연을 ~800ms → axe 실행
+   시간(~40~80ms)으로 낮출 수 있으나 상태 관리(재스폰·동시성) 복잡도가 늘어 v0.1.0에서는 보류.
+2. 페이지 규모에 따라 axe 규칙 서브셋을 줄이거나 단계 실행.
+3. 완료 기준 "500KB ≤ 2초" 재조정: 하드 타임아웃으로 **행(hang)은 제거**되었고 일반 사용 사례는 빠르다.
+   대용량 페이지는 "2초 내 완료" 대신 "타임아웃 내에 `E_TIMEOUT`으로 안전하게 실패"가 실질적 계약이다.
+
+일반적인 사용(컴포넌트·페이지 단위 검사, 수백 KB 미만)은 문제 없이 빠르다. 대용량 페이지는 이제
+서버를 멈추지 않고 타임아웃으로 안전하게 실패한다.
 
 ## 6. 브라우저 엔진 (`engine/browser.ts`, `browser-detect.ts`)
 
