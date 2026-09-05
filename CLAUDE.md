@@ -78,8 +78,11 @@ claude --plugin-dir . # 플러그인 로컬 테스트
 
 - **T-11 통합·릴리스 테스트** (2026-09-05, U가 W 레인 겸함) — `tests/release/{smoke,package}.ts`(dist stdio 기동·initialize·도구7/프롬프트2/리소스6 노출·check_html e2e·npm pack 내용), `tests/privacy/nfr-03.ts`(입력 본문 무로깅·오류 응답 무스택), `tests/integration/{perf,e2e}.ts`(기동 예산·일반 페이지 검사 속도·도구 조합 E2E). `docs/release/e2e-manual.md`(대화형 슬래시 커맨드 E2E 수동 절차·기록표). `npm run check`(139건)·`test:browser`(17건) 통과
 
-### 활성
-- **T-12 배포 준비** — 다음 착수 대상. `release.yml`·`docs/install/*`·README·CHANGELOG·`marketplace.json` 점검·npm v0.1.0. **관리자 필요**: main 브랜치 보호, npm 게시 권한(OIDC/토큰). T2 규칙(백로그)은 배포 후 or 병행
+- **T-12 배포 준비(게시 직전까지)** (2026-09-05, U) — `.github/workflows/release.yml`(v태그 push → 게이트 재실행 → 태그·package.json·plugin.json 버전 일치 검사 → npm publish --provenance → GitHub Release → 설치 스모크), `CHANGELOG.md`(v0.1.0), `docs/install/{claude-code,claude-desktop,first-use}.md`, README v0.1.0 갱신. `npm run check`(139건)·`claude plugin validate .` 통과, 버전 3곳(package·plugin·CHANGELOG) 0.1.0 일치
 
-### 다음
-- T-12 배포(M4) · 전체 WBS: `docs/plan/06-harness-engineering.md` §5 · T2 규칙(백로그)
+### 활성 / 남은 일 (관리자·후속)
+- **실제 배포(관리자 필요)** — ① `main` 브랜치 보호(PR 필수, `check`·`cross-platform` required) ② npm 게시 권한: npm Trusted Publisher(OIDC) 또는 `NPM_TOKEN` 시크릿 ③ 준비되면 `v0.1.0` 태그 push → release.yml 자동 게시 ④ 게시 후 `docs/release/e2e-manual.md`의 대화형 E2E 3종 수행·기록
+- **T2 규칙(백로그)** — 단일 소스 §5의 13개 중 가능한 만큼(k-outline-none·k-carousel-no-pause·k-error-association·k-autocomplete-missing 등). 픽스처+골든 테스트+registry T2RULES 배선 필요
+- **성능 백로그** — warm worker pool 재사용(호출당 지연 ~800ms→axe 시간). `docs/plan/03-backend-plan.md` §5.1
+
+전체 WBS: `docs/plan/06-harness-engineering.md` §5 — **M4까지 구현·검증 완료, 게시만 관리자 대기**
