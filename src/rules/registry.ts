@@ -1,5 +1,6 @@
 import * as k from "./k/index.js";
-import type { StaticRule } from "./types.js";
+import * as b from "./b/index.js";
+import type { RuleMeta, StaticRule, BrowserRule } from "./types.js";
 import type { DataBundle } from "../data/loader.js";
 
 /** T1 18개 정적 규칙 전체 목록(단일 소스 §5와 대조된다, ADR-04). */
@@ -24,11 +25,21 @@ export const KRULES: StaticRule[] = [
   k.parseErrorsRule,
 ];
 
+/** 브라우저 규칙 6개(§5 B tier). 백로그 b-widget-keyboard는 아직 구현하지 않는다. */
+export const BRULES: BrowserRule[] = [
+  b.focusVisibleRule,
+  b.focusOrderRule,
+  b.skipLinkWorksRule,
+  b.targetSize6mmRule,
+  b.keyboardReachableRule,
+  b.motionRuntimeRule,
+];
+
 /**
  * 규칙의 kwcag 귀속이 단일 소스 데이터(kwcag22.json)에 실재하는지 대조한다.
  * 존재하지 않는 검사항목에 귀속된 규칙이 있으면 던진다 — 기동 중단(ADR-04).
  */
-export function validateRegistry(rules: StaticRule[], data: DataBundle): void {
+export function validateRegistry(rules: RuleMeta[], data: DataBundle): void {
   const unknown = rules.filter((r) => !data.kwcag22.findById(r.kwcag));
   if (unknown.length > 0) {
     const ids = unknown.map((r) => `${r.id} → ${r.kwcag}`).join(", ");

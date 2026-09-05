@@ -1,0 +1,31 @@
+name: Browser
+
+# 브라우저 규칙(b-*)·audit_url·browser_status 테스트. ci.yml의 필수 체크(check)와는 별개다.
+# 안정화 전까지는 필수 체크로 지정하지 않는다(관리자 판단, 04-qa-plan §2).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Playwright Chromium 설치
+        run: npx playwright install --with-deps chromium
+
+      - name: 브라우저 테스트
+        env:
+          SWWA_BROWSER_TESTS: "1"
+        run: npm run test:browser
