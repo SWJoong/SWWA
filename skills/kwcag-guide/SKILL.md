@@ -42,6 +42,6 @@ KWCAG 2.2 검사항목·WCAG 2.2 매핑·품질인증 기준의 **단일 소스 
 - [kwcag22-checklist.md](references/kwcag22-checklist.md) — 33개 검사항목 단일 소스(ADR-04)
 - [wcag-mapping.md](references/wcag-mapping.md) — WCAG 2.2 A·AA 전체 ↔ KWCAG 대조
 - [sources.md](references/sources.md) — 출처·확인일·라이선스
-
-`certification.md`·`mobile-app-guideline.md`·`glossary.md`는 후속 작업(T-09 전후, 인증 준비도·
-`swwa://certification`·`swwa://mobile-app-2.0` 리소스 구현과 함께)에서 추가한다.
+- [certification.md](references/certification.md) — 웹 접근성 품질인증 절차·기준(재확인 필요 수치 포함)
+- [mobile-app-guideline.md](references/mobile-app-guideline.md) — 모바일 앱 접근성 지침 2.0 요약(웹뷰는 KWCAG로 점검)
+- [glossary.md](references/glossary.md) — 용어집(공식 번호/별칭·자동화 등급·k/b/axe 규칙·도구 등)
