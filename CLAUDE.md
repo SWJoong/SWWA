@@ -82,7 +82,7 @@ claude --plugin-dir . # 플러그인 로컬 테스트
 
 ### 활성 / 남은 일 (관리자·후속)
 - **실제 배포(관리자 필요)** — ① `main` 브랜치 보호(PR 필수, `check`·`cross-platform` required) ② npm 게시 권한: npm Trusted Publisher(OIDC) 또는 `NPM_TOKEN` 시크릿 ③ 준비되면 `v0.1.0` 태그 push → release.yml 자동 게시 ④ 게시 후 `docs/release/e2e-manual.md`의 대화형 E2E 3종 수행·기록
-- **T2 규칙(백로그)** — 단일 소스 §5의 13개 중 가능한 만큼(k-outline-none·k-carousel-no-pause·k-error-association·k-autocomplete-missing 등). 픽스처+골든 테스트+registry T2RULES 배선 필요
+- **T2 규칙** (2026-09-05, U) — 단일 소스 §5의 T2 13개 전부 구현: k-sensory-instruction·k-outline-none·k-accesskey·k-session-timeout-hint·k-carousel-no-pause·k-flash-animation·k-link-same-text-diff-href·k-gesture-listener·k-down-event-action·k-device-motion·k-onload-popup·k-error-association·k-autocomplete-missing. 전부 휴리스틱이라 outcome incomplete(사람 확인). `registry.ts`에 T2RULES·ALL_K_RULES 추가, 정적 엔진이 T1+T2(31개) 실행. 픽스처 26·골든 테스트 26·registry 정합성 테스트. `npm run check`(168건)·`test:browser`(17건) 통과. CSS 규칙(outline-none·flash-animation)은 jsdom CSSOM 사용
 - **성능 백로그** — warm worker pool 재사용(호출당 지연 ~800ms→axe 시간). `docs/plan/03-backend-plan.md` §5.1
 
 전체 WBS: `docs/plan/06-harness-engineering.md` §5 — **M4까지 구현·검증 완료, 게시만 관리자 대기**
