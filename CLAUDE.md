@@ -76,8 +76,10 @@ claude --plugin-dir . # 플러그인 로컬 테스트
 - **T-09 인증 준비도·프롬프트** (2026-09-05, U) — `report/cert.ts`·`estimate_cert_readiness`·프롬프트 2종(`review-markup`·`audit-report`)·`skills/a11y-audit/references/report-template.md`. 도구 7개·프롬프트 2종·리소스 6종 전부 등록 완료. `npm run check` 통과(114건), Inspector로 도구·프롬프트 동작 확인. **M3 완성**. T2 규칙(가능한 만큼)은 후속 PR로 분리
 - **T-10 스킬 본문** (2026-09-05, U가 W 몫 kwcag-guide references도 겸함) — `a11y-review` SKILL.md 본문 + references 9종(html·react-jsx·vue-svelte·css·forms·tables·media·aria-widgets·korean-pitfalls), `a11y-audit` SKILL.md 본문 + references(audit-flow·page-sampling·user-eval-checklist, report-template은 T-09), `kwcag-guide` references(certification·mobile-app-guideline·glossary) + SKILL.md 링크 갱신. `claude plugin validate .`·`skills --strict` 통과, `npm run check`(114건) 통과. E2E 3 시나리오는 `claude --plugin-dir .` 대화형이라 자동 실행 불가 — 플러그인 검증·Inspector 동작으로 대체 확인
 
+- **T-11 통합·릴리스 테스트** (2026-09-05, U가 W 레인 겸함) — `tests/release/{smoke,package}.ts`(dist stdio 기동·initialize·도구7/프롬프트2/리소스6 노출·check_html e2e·npm pack 내용), `tests/privacy/nfr-03.ts`(입력 본문 무로깅·오류 응답 무스택), `tests/integration/{perf,e2e}.ts`(기동 예산·일반 페이지 검사 속도·도구 조합 E2E). `docs/release/e2e-manual.md`(대화형 슬래시 커맨드 E2E 수동 절차·기록표). `npm run check`(139건)·`test:browser`(17건) 통과
+
 ### 활성
-- **T-11 통합·릴리스 테스트 준비** — 다음 착수 대상(원래 W 레인, 겸함). smoke·package·e2e·perf·privacy 테스트. 또는 T2 규칙 후속 PR을 먼저 진행 가능
+- **T-12 배포 준비** — 다음 착수 대상. `release.yml`·`docs/install/*`·README·CHANGELOG·`marketplace.json` 점검·npm v0.1.0. **관리자 필요**: main 브랜치 보호, npm 게시 권한(OIDC/토큰). T2 규칙(백로그)은 배포 후 or 병행
 
 ### 다음
-- T-11 통합·릴리스 테스트 → T-12 배포 · 전체 WBS: `docs/plan/06-harness-engineering.md` §5 · T2 규칙(백로그)
+- T-12 배포(M4) · 전체 WBS: `docs/plan/06-harness-engineering.md` §5 · T2 규칙(백로그)
