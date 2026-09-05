@@ -74,9 +74,10 @@ claude --plugin-dir . # 플러그인 로컬 테스트
 - **T-07 브라우저 엔진 + T-08 브라우저 테스트** (2026-09-05, U가 W 역할 겸임) — `engine/{browser,browser-detect,url-guard}.ts`·`rules/b/*` 6개·`audit_url`·`browser_status`, `tests/browser/*`(b-규칙 6종·audit_url·browser_status 계약, 17건)·`tests/fixtures/pages/*`·`scripts/serve-fixtures.mjs`·`.github/workflows/browser.yml`. 이번엔 테스트를 먼저 committed-red로 커밋하지 않고 테스트·구현을 함께 작성해 실제 로컬 Chrome으로 검증 후 한 커밋으로 올렸다(시간 제약, PR에 명시). 완료 기준 충족: 로컬 Chrome으로 `audit_url` 동작 확인(Inspector 수동 호출 포함)
 - **성능 백로그(정적 엔진 하드 타임아웃)** (2026-09-05, U) — `engine/static-worker.ts` 신설, `runStatic`을 worker_threads로 분리해 `worker.terminate()`로 강제 종료 가능한 하드 타임아웃 구현(axe 동기 점유로 행 걸리던 문제 해결). `tests/engine/static-worker.test.ts`, `vitest.config.ts` testTimeout 30초. 상세 `docs/plan/03-backend-plan.md` §5.1. PR #9
 - **T-09 인증 준비도·프롬프트** (2026-09-05, U) — `report/cert.ts`·`estimate_cert_readiness`·프롬프트 2종(`review-markup`·`audit-report`)·`skills/a11y-audit/references/report-template.md`. 도구 7개·프롬프트 2종·리소스 6종 전부 등록 완료. `npm run check` 통과(114건), Inspector로 도구·프롬프트 동작 확인. **M3 완성**. T2 규칙(가능한 만큼)은 후속 PR로 분리
+- **T-10 스킬 본문** (2026-09-05, U가 W 몫 kwcag-guide references도 겸함) — `a11y-review` SKILL.md 본문 + references 9종(html·react-jsx·vue-svelte·css·forms·tables·media·aria-widgets·korean-pitfalls), `a11y-audit` SKILL.md 본문 + references(audit-flow·page-sampling·user-eval-checklist, report-template은 T-09), `kwcag-guide` references(certification·mobile-app-guideline·glossary) + SKILL.md 링크 갱신. `claude plugin validate .`·`skills --strict` 통과, `npm run check`(114건) 통과. E2E 3 시나리오는 `claude --plugin-dir .` 대화형이라 자동 실행 불가 — 플러그인 검증·Inspector 동작으로 대체 확인
 
 ### 활성
-- **T-10 스킬 본문** — 다음 착수 대상. `a11y-review`·`a11y-audit` SKILL.md 본문(현재 골격만)·references. W 부재로 `kwcag-guide` 세부 references도 겸함. E2E 3 시나리오 통과가 완료 기준. (T2 규칙 후속 PR도 이 시점 전후에 가능)
+- **T-11 통합·릴리스 테스트 준비** — 다음 착수 대상(원래 W 레인, 겸함). smoke·package·e2e·perf·privacy 테스트. 또는 T2 규칙 후속 PR을 먼저 진행 가능
 
 ### 다음
-- T-10 스킬 본문 → T-11 통합·릴리스 테스트 → T-12 배포 · 전체 WBS: `docs/plan/06-harness-engineering.md` §5
+- T-11 통합·릴리스 테스트 → T-12 배포 · 전체 WBS: `docs/plan/06-harness-engineering.md` §5 · T2 규칙(백로그)
