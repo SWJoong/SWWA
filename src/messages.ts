@@ -88,6 +88,36 @@ export const captchaDetect = {
   fix: "이미지 캡차만 제공하지 말고 오디오 캡차 등 대체 인증 수단을 함께 제공하세요.",
 };
 
+export const bFocusVisible = {
+  message: "초점을 받아도 시각적으로 구별되는 스타일 변화가 없습니다.",
+  fix: ":focus 또는 :focus-visible에 outline·box-shadow 등 눈에 띄는 스타일을 추가하세요.",
+};
+
+export const bFocusOrder = {
+  message: "키보드 초점 순서가 문서(DOM) 순서와 어긋납니다.",
+  fix: "tabindex 양수값 사용을 피하고 DOM 순서로 자연스러운 초점 이동이 되도록 조정하세요.",
+};
+
+export const bSkipLinkWorks = {
+  message: "본문 바로가기 링크를 실행해도 초점이 대상으로 이동하지 않습니다.",
+  fix: '바로가기 대상 요소에 tabindex="-1"을 추가해 프로그래밍적으로 초점을 받을 수 있게 하세요.',
+};
+
+export const bTargetSize = {
+  message: (px: number): string => `상호작용 요소의 클릭 가능 영역이 너무 작습니다(대각선 약 ${px}px, 기준 22.7px 미만).`,
+  fix: "버튼·링크 등의 클릭 가능 영역을 최소 24×24px(6mm) 이상으로 키우세요.",
+};
+
+export const bKeyboardReachable = {
+  message: "클릭·역할(role)만으로 상호작용하는 요소가 Tab 순회로 접근되지 않습니다.",
+  fix: 'tabindex="0"을 추가하고 키보드 이벤트(Enter·Space) 핸들러를 함께 구현하세요.',
+};
+
+export const bMotionRuntime = {
+  message: "자동으로 계속 변경되는 콘텐츠에 정지·일시정지 컨트롤이 없습니다.",
+  fix: '"일시정지" 버튼 등 사용자가 자동 변경을 멈출 수 있는 컨트롤을 추가하세요.',
+};
+
 export const parseErrors: Record<string, { message: string; fix: string }> = {
   "duplicate-attribute": {
     message: "같은 속성이 한 태그에 중복 선언되었습니다.",

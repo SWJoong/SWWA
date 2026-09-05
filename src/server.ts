@@ -5,13 +5,15 @@ import { registerLookupTool } from "./tools/lookup.js";
 import { registerChecklistTool } from "./tools/checklist.js";
 import { registerCheckHtmlTool } from "./tools/check-html.js";
 import { registerCheckContrastTool } from "./tools/check-contrast.js";
+import { registerAuditUrlTool } from "./tools/audit-url.js";
+import { registerBrowserStatusTool } from "./tools/browser-status.js";
 import { registerResources } from "./resources/index.js";
 
 /**
  * SWWA MCP 서버를 조립한다. 도구·프롬프트·리소스 등록만 담당하고 로직은 갖지 않는다(03 §1).
- * T-06(현재)까지 도구 4개(lookup_checkpoint·get_checklist·check_html·check_contrast)·리소스
- * 6종을 등록한다. 나머지 3개 도구(audit_url·browser_status·estimate_cert_readiness)와 프롬프트
- * 2종은 T-07~T-09에서 순차 등록한다(계약: docs/plan/02-architecture.md §3).
+ * T-07(현재)까지 도구 6개(lookup_checkpoint·get_checklist·check_html·check_contrast·audit_url·
+ * browser_status)·리소스 6종을 등록한다. 나머지 1개 도구(estimate_cert_readiness)와 프롬프트
+ * 2종은 T-09에서 등록한다(계약: docs/plan/02-architecture.md §3).
  */
 export function createServer(data: DataBundle): McpServer {
   const server = new McpServer({ name: "swwa", version: "0.1.0" });
@@ -23,10 +25,11 @@ export function createServer(data: DataBundle): McpServer {
   registerChecklistTool(server, data);
   registerCheckHtmlTool(server, data);
   registerCheckContrastTool(server);
+  registerAuditUrlTool(server, data);
+  registerBrowserStatusTool(server);
   registerResources(server, data);
 
-  // TODO(T-07~T-09): registerTool(audit_url·browser_status·estimate_cert_readiness),
-  // registerPrompt(review-markup·audit-report).
+  // TODO(T-09): registerTool(estimate_cert_readiness), registerPrompt(review-markup·audit-report).
 
   return server;
 }

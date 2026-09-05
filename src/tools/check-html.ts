@@ -6,58 +6,11 @@ import { runStatic, EngineTimeoutError } from "../engine/static.js";
 import { summarize } from "../report/summarize.js";
 import { formatReportText } from "../report/format.js";
 import type { Report } from "../report/types.js";
+import { reportOutputShape } from "./report-schema.js";
 
 const MAX_HTML_CHARS = 2_000_000;
 const MAX_FILE_BYTES = 2 * 1024 * 1024;
 const DEFAULT_MAX_FINDINGS = 200;
-
-const findingSchema = z.object({
-  ruleId: z.string(),
-  engine: z.enum(["k-rule", "axe", "b-rule"]),
-  kwcag: z.string().nullable(),
-  wcag: z.array(z.string()),
-  impact: z.enum(["critical", "serious", "moderate", "minor"]),
-  outcome: z.enum(["fail", "incomplete"]),
-  confidence: z.enum(["high", "medium", "low"]),
-  selector: z.string(),
-  html: z.string(),
-  message: z.string(),
-  fix: z.string(),
-  helpUrl: z.string().optional(),
-});
-
-const checkpointResultSchema = z.object({
-  id: z.string(),
-  alias: z.string(),
-  name: z.string(),
-  automation: z.enum(["auto", "assist", "manual", "na"]),
-  status: z.enum(["fail", "incomplete", "manual", "pass", "na"]),
-  findings: z.number(),
-});
-
-const reportOutputShape = {
-  engine: z.object({
-    name: z.literal("swwa"),
-    version: z.string(),
-    axe: z.string(),
-    mode: z.enum(["static", "browser"]),
-  }),
-  target: z.object({ kind: z.enum(["html", "file", "url"]), ref: z.string(), title: z.string().optional() }),
-  verdict: z.enum(["fail", "needs-review", "pass"]),
-  summary: z.object({
-    fail: z.number(),
-    incomplete: z.number(),
-    manual: z.number(),
-    pass: z.number(),
-    na: z.number(),
-    byImpact: z.object({ critical: z.number(), serious: z.number(), moderate: z.number(), minor: z.number() }),
-    truncated: z.boolean(),
-  }),
-  checkpoints: z.array(checkpointResultSchema),
-  findings: z.array(findingSchema),
-  manualChecklist: z.array(z.object({ kwcag: z.string(), alias: z.string(), question: z.string() })),
-  notices: z.array(z.string()),
-};
 
 function errorResult(code: string, message: string) {
   return {

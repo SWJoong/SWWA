@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><head><title>자동 재생 테스트</title></head>
+<body>
+  <div id="carousel">슬라이드 1</div>
+  <button id="pause-btn">일시정지</button>
+  <script>
+    let n = 1;
+    setInterval(() => {
+      n += 1;
+      document.getElementById("carousel").textContent = "슬라이드 " + n;
+    }, 150);
+  </script>
+</body></html>

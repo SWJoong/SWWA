@@ -71,9 +71,10 @@ claude --plugin-dir . # 플러그인 로컬 테스트
 - **T-04 데이터 자산·조회 도구** (2026-09-04, U) — `assets/*.json`(kwcag22·wcag22·axe-rule-map·certification·link-text-ko·alt-text-ko·sources)·`assets/mobile-app-2.0.md`·`src/data/*` 로더 6종·`scripts/copy-checklist.mjs`·`lookup_checkpoint`·`get_checklist`·리소스 6종. `npm run check` 통과(T-03 데이터 계약 테스트 16건 전부 초록), Inspector로 도구·리소스 동작 확인. PR #4(T-03 PR #3에 스택)
 - **T-05 정적 규칙 골든 테스트** (2026-09-05, U가 W 역할 겸임) — T1 18규칙 픽스처·골든 테스트, `check_html`·`check_contrast` 계약 테스트, 정규화 테스트(의도된 실패로 커밋)
 - **T-06 정적 엔진** (2026-09-05, U) — `engine/static.ts`(jsdom+axe-core+k-규칙)·`rules/k/*`(T1 18개)·`normalize/{finding,axe,checkpoints,locale}.ts`·`report/{types,summarize,format}.ts`·`color/contrast.ts`·`check_html`·`check_contrast`. T-05 테스트 전부 초록(92개 전체 테스트 통과). **알려진 한계**: axe-core+jsdom 성능 특성상 "500KB ≤ 2초" 완료 기준 미충족(일반 컴포넌트/페이지 검사는 ~0.2초로 빠름, 대용량 조밀 페이지는 수십 초) — 상세는 `docs/plan/03-backend-plan.md` §5.1, 후속 조치는 백로그
+- **T-07 브라우저 엔진 + T-08 브라우저 테스트** (2026-09-05, U가 W 역할 겸임) — `engine/{browser,browser-detect,url-guard}.ts`·`rules/b/*` 6개·`audit_url`·`browser_status`, `tests/browser/*`(b-규칙 6종·audit_url·browser_status 계약, 17건)·`tests/fixtures/pages/*`·`scripts/serve-fixtures.mjs`·`.github/workflows/browser.yml`. 이번엔 테스트를 먼저 committed-red로 커밋하지 않고 테스트·구현을 함께 작성해 실제 로컬 Chrome으로 검증 후 한 커밋으로 올렸다(시간 제약, PR에 명시). 완료 기준 충족: 로컬 Chrome으로 `audit_url` 동작 확인(Inspector 수동 호출 포함)
 
 ### 활성
-- **T-07 브라우저 엔진 준비** — 다음 착수 대상. `browser-detect.ts`·`engine/browser.ts`·`rules/b/*` 6개·`url-guard.ts`·`audit_url`·`browser_status`. 선행 브라우저 테스트(T-08)는 W 몫이었으나 W 부재로 U가 겸해 진행할 계획
+- **T-09 인증 준비도·프롬프트·T2 규칙 준비** — 다음 착수 대상. `estimate_cert_readiness`·`report/cert.ts`·프롬프트 2종(`review-markup`·`audit-report`)·T2 규칙(가능한 만큼)
 
 ### 다음
-- T-07 브라우저 엔진 → T-09 인증 준비도·프롬프트 → T-10 스킬 본문 → T-12 배포 · 전체 WBS: `docs/plan/06-harness-engineering.md` §5
+- T-09 인증 준비도·프롬프트 → T-10 스킬 본문 → T-12 배포 · 전체 WBS: `docs/plan/06-harness-engineering.md` §5
