@@ -25,3 +25,6 @@ T-09(인증준비도·프롬프트, M3 완성)·T-10(스킬 본문 3종) 진행 
 ## [2026-09-05T07:08Z] U
 T-11(통합·릴리스 테스트, PR#12 병합)·T-12(배포 준비, PR#13 오픈) 완료 · release.yml·CHANGELOG·docs/install 3종·README v0.1.0 갱신, 버전 3곳 0.1.0 일치, npm run check 139건 통과 · M4까지 구현·검증 완료, 실제 게시만 관리자 대기(main 브랜치 보호·npm OIDC/토큰·v0.1.0 태그 push) · 대화형 E2E 3종은 docs/release/e2e-manual.md 절차로 게시 전 수동 수행 · 후속: T2 규칙(백로그)·warm worker pool
 
+## [2026-09-05T08:11Z] U
+T2 규칙 13개 전량 구현·병합 완료(PR#14) · 정적 규칙 T1 18+T2 13=31개, 브라우저 6개 · npm run check 168건·test:browser 17건 통과 · 코드 구현·검증은 WBS 전 범위 완료(T-01~T-12+성능 백로그+T2). 남은 건 관리자 배포뿐(main 브랜치 보호·npm OIDC/토큰·v0.1.0 태그 push·게시 후 대화형 E2E 3종)
+
