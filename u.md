@@ -22,3 +22,6 @@ T-07(브라우저 엔진)+T-08(브라우저 테스트) main 병합 완료(PR #8,
 ## [2026-09-05T06:37Z] U
 T-09(인증준비도·프롬프트, M3 완성)·T-10(스킬 본문 3종) 진행 · 성능 백로그 해결(정적엔진 worker_threads 하드타임아웃, PR#9 병합) · T-09 PR#10 병합 완료(도구7·프롬프트2·리소스6 전부 등록) · T-10 PR#11 오픈(a11y-review 9 refs·a11y-audit 3 refs·kwcag-guide 3 refs, kwcag-guide는 W 몫 겸함) · E2E는 claude --plugin-dir 대화형이라 plugin validate로 대체 · 다음 T-11 통합·릴리스 테스트 또는 T2 규칙 후속 PR
 
+## [2026-09-05T07:08Z] U
+T-11(통합·릴리스 테스트, PR#12 병합)·T-12(배포 준비, PR#13 오픈) 완료 · release.yml·CHANGELOG·docs/install 3종·README v0.1.0 갱신, 버전 3곳 0.1.0 일치, npm run check 139건 통과 · M4까지 구현·검증 완료, 실제 게시만 관리자 대기(main 브랜치 보호·npm OIDC/토큰·v0.1.0 태그 push) · 대화형 E2E 3종은 docs/release/e2e-manual.md 절차로 게시 전 수동 수행 · 후속: T2 규칙(백로그)·warm worker pool
+
